@@ -4,10 +4,19 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Drop Pass | Start hockey. Pass it on.</title>
-<meta name="theme-color" content="#0A1830">
+<meta name="theme-color" content="#F5F9FF">
+<meta name="color-scheme" content="light only">
 <meta property="og:title" content="Drop Pass">
 <meta property="og:description" content="A sized starter kit with its return value printed up front. Outgrow it, pass it back, and it goes to the next family.">
 <meta property="og:type" content="website">
+<meta property="og:url" content="https://cenzo14.github.io/drop-pass/">
+<meta property="og:site_name" content="Drop Pass">
+<meta property="og:image" content="https://cenzo14.github.io/drop-pass/share.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Two hockey parents pass a gear bag at the rink boards">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://cenzo14.github.io/drop-pass/share.jpg">
 <meta name="description" content="Start hockey with a sized kit and a published return value. Outgrow it, pass it back, and it goes to the next family.">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='32' fill='%230A1830'/%3E%3Cellipse cx='32' cy='36' rx='15' ry='7' fill='%232A78FF'/%3E%3Cpath d='M44 24C40 14 26 14 21 22' fill='none' stroke='white' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Figtree:wght@400;500;600;700&display=swap">
@@ -20,16 +29,6 @@
   --disp:"Barlow Condensed","Arial Narrow",Impact,sans-serif; --body:"Figtree",system-ui,-apple-system,"Segoe UI",sans-serif;
   --dockH:92px; --topH:62px;
   box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
-}
-@media (prefers-color-scheme: dark){
-  :root:not([data-theme="light"]){
-    --bg:#08121F; --surface:#0F1D31; --surface2:#142845; --text:#EAF2FF; --muted:#9DB1CF; --line:#1E3556;
-    --blue:#5C9BFF; --glass:rgba(15,29,49,.74); --glass-edge:rgba(120,170,255,.3); --glow:rgba(92,155,255,.36); --rink:#27456F;
-  }
-}
-:root[data-theme="dark"]{
-  --bg:#08121F; --surface:#0F1D31; --surface2:#142845; --text:#EAF2FF; --muted:#9DB1CF; --line:#1E3556;
-  --blue:#5C9BFF; --glass:rgba(15,29,49,.74); --glass-edge:rgba(120,170,255,.3); --glow:rgba(92,155,255,.36); --rink:#27456F;
 }
 html,body{height:100%}
 *{box-sizing:border-box}
@@ -312,8 +311,6 @@ a{color:inherit;text-decoration:none}
 #bgp{position:fixed;inset:0;z-index:0;overflow:hidden;pointer-events:none}
 #bgp .bgi{position:absolute;top:0;bottom:0;left:-6%;width:112%;background-size:cover;background-position:center;opacity:.3;transition:transform .8s cubic-bezier(.3,.8,.2,1);will-change:transform}
 #bgp .bgv{position:absolute;inset:0;background:linear-gradient(180deg,color-mix(in srgb,var(--bg) 80%,transparent),color-mix(in srgb,var(--bg) 62%,transparent) 42%,color-mix(in srgb,var(--bg) 90%,transparent))}
-@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) #bgp .bgi{opacity:.4}}
-:root[data-theme="dark"] #bgp .bgi{opacity:.4}
 #rink{opacity:.45;transition:opacity .5s}.offhome #rink{opacity:.16}
 .stallwrap{position:relative}
 .sarr{position:absolute;top:50%;margin-top:-26px;z-index:3;width:42px;height:42px;border-radius:50%;background:var(--glass);border:1px solid var(--glass-edge);box-shadow:0 0 0 1px var(--line),0 10px 20px -10px rgba(10,24,48,.5);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);display:grid;place-items:center;color:var(--blue)}
@@ -535,8 +532,6 @@ img[data-img]{display:block;max-width:100%}
 .st{font:800 9px var(--body);letter-spacing:.14em;fill:var(--muted);opacity:.65}
 .riv{stroke:#BCD6F3}
 .hwy{stroke:#C9D6E8}
-@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .riv{stroke:#25476F}:root:not([data-theme="light"]) .hwy{stroke:#2A4162}}
-:root[data-theme="dark"] .riv{stroke:#25476F}:root[data-theme="dark"] .hwy{stroke:#2A4162}
 @media (max-width:820px){.mapgrid{grid-template-columns:1fr}.mapcard{position:static}.kid{width:68px}}
 
 /* ===== cleanup pass ===== */
@@ -551,6 +546,46 @@ img[data-img]{display:block;max-width:100%}
   .mapgrid{grid-template-columns:minmax(0,1fr)}
   .hero-art{height:min(28vh,236px)}
   .sub-h h2{font-size:clamp(26px,7.6vw,34px)}
+}
+
+/* ===== v12: one logo, icy white, clear paths ===== */
+:root{color-scheme:light}
+#bgp .bgi{opacity:.2}
+#bgp .bgv{background:linear-gradient(180deg,color-mix(in srgb,var(--bg) 88%,transparent),color-mix(in srgb,var(--bg) 70%,transparent) 42%,color-mix(in srgb,var(--bg) 94%,transparent))}
+#rink{opacity:.34}
+.brand{perspective:700px;gap:11px}
+.brand .ha-badge{position:relative;top:auto;left:auto;width:54px;flex:none;filter:none;box-shadow:0 6px 14px -2px rgba(10,24,48,.38)}
+.brand .ha-badge img{width:100%;height:100%;filter:none;object-fit:contain}
+.brand .ha-badge:hover{box-shadow:0 8px 18px -2px var(--glow),0 0 0 2px var(--blue-lite)}
+.brand .ha-badge.hello{animation:hello 1.2s cubic-bezier(.3,1.2,.4,1)}
+@keyframes hello{from{transform:rotateY(0)}to{transform:rotateY(360deg)}}
+.ha-main{width:100%}
+.paths{margin-top:18px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;max-width:560px}
+.path{display:flex;align-items:center;gap:10px;text-align:left;padding:10px 12px;border-radius:18px;background:var(--glass);border:1px solid var(--glass-edge);box-shadow:0 0 0 1px var(--line);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);transition:transform .2s,box-shadow .2s;min-width:0}
+.path:hover{transform:translateY(-2px);box-shadow:0 0 0 1px var(--blue),0 12px 22px -14px var(--glow)}
+.path b{display:block;font-size:14px;line-height:1.2}
+.path em{display:block;font-style:normal;font-size:11.5px;color:var(--muted);line-height:1.25;margin-top:1px}
+.status{margin-top:14px;font-size:13px}
+@media (max-width:820px){
+  #rink{opacity:.2}
+  .brand .ha-badge{width:48px}
+  .hero-art{height:min(26vh,220px)}
+  .ha-main{width:100%;height:94%}
+  .hero .home-h{font-size:clamp(42px,12.4vw,78px)}
+  .home-sub{margin-top:10px;font-size:15.5px}
+  .cta{margin-top:14px;gap:10px}
+  .cta .btn{padding:12px 18px;font-size:15px}
+  .paths{margin-top:12px;gap:8px}
+  .path{flex-direction:column;align-items:flex-start;gap:6px;padding:10px;border-radius:16px}
+  .path .ico.sm{width:32px;height:32px;border-radius:10px}.path .ico.sm svg{width:18px;height:18px}
+  .path b{font-size:12.5px}
+  .path em{display:none}
+  .status{margin-top:10px;font-size:12.5px}
+  #v-home{align-content:safe center}
+}
+@media (max-width:820px) and (max-height:720px){
+  .hero-art{height:150px}
+  .home-sub{font-size:14.5px}
 }
 </style>
 </head>
@@ -599,7 +634,7 @@ img[data-img]{display:block;max-width:100%}
 <svg id="rink" aria-hidden="true"></svg>
 
 <header class="top">
-  <div class="brand"><img data-img="logoSm" alt="">DROP PASS</div>
+  <div class="brand"><button class="ha-badge" id="badge" aria-pressed="false" aria-label="Flip the logo between pass forward and trade-in"><span class="f"><img data-img="logoA" alt="Drop Pass logo"></span><span class="b"><img data-img="logoB" alt="Drop Pass trade-in logo"></span></button><span>DROP PASS</span></div>
   <div class="r">
     <button class="chip" id="rinkBtn" aria-label="Set home rink"><svg><use href="#i-pin"/></svg><span class="tx" id="rinkTx">Home rink</span></button>
   </div>
@@ -621,14 +656,17 @@ img[data-img]{display:block;max-width:100%}
           <button class="btn pri" data-open="kits"><svg><use href="#i-kit"/></svg>Get a kit</button>
           <button class="btn gl" id="heroPass"><svg style="color:var(--blue)"><use href="#i-back"/></svg>Pass back gear</button>
         </div>
+        <div class="paths" role="group" aria-label="Where do you want to go">
+          <button class="path" data-open="learn"><span class="ico sm"><svg><use href="#i-learn"/></svg></span><span><b>New to hockey</b><em>Start here</em></span></button>
+          <button class="path" data-tab="map"><span class="ico sm"><svg><use href="#i-pin"/></svg></span><span><b>Find a rink</b><em>Rinks near you</em></span></button>
+          <button class="path" data-open="compare"><span class="ico sm"><svg><use href="#i-compare"/></svg></span><span><b>See the cost</b><em>Keep or pass back</em></span></button>
+        </div>
         <div class="status"><i class="pulse"></i>St. Louis first. Minnesota next.<span class="rinkchip" id="rinkNote"></span></div>
-        <button class="lnk" data-open="learn">New to hockey? Start here →</button>
         <div class="rinkset" id="rinkSet"><input id="rinkIn" type="text" placeholder="Your home rink" aria-label="Home rink name" maxlength="40" style="letter-spacing:0"><button class="btn pri sm" id="rinkSave">Save</button></div>
       </div>
       <div class="hero-art" id="heroArt">
         <div class="ha-main" data-d="10"><img data-img="handoff" alt="Two parents pass a gear bag at the boards while their kids watch"></div>
         <div class="ha-sec" data-d="22"><img data-img="bag" alt="An open hockey bag with helmet, gloves, pads and skates"></div>
-        <button class="ha-badge" id="badge" data-d="34" aria-pressed="false" aria-label="Flip the logo between pass forward and trade-in"><span class="f"><img data-img="logoA" alt="Drop Pass logo"></span><span class="b"><img data-img="logoB" alt="Drop Pass trade-in logo"></span></button>
         <span class="ha-tag" data-d="16"><i class="pulse"></i>Drop Pass Checked</span>
       </div>
     </div>
@@ -1053,6 +1091,7 @@ applyImgs();
     var art=$('#heroArt'),bd=$('#badge');
     bd.addEventListener('click',function(){var on=bd.getAttribute('aria-pressed')!=='true';bd.setAttribute('aria-pressed',on)});
     if(RM)return;
+    setTimeout(function(){bd.classList.add('hello');setTimeout(function(){bd.classList.remove('hello')},1300)},900);
     $('#v-home').addEventListener('pointermove',function(e){
       if(e.pointerType==='touch')return;
       var x=(e.clientX/innerWidth-.5), y=(e.clientY/innerHeight-.5);
