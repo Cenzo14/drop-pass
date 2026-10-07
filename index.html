@@ -1130,6 +1130,126 @@ img[data-img]{display:block;max-width:100%}
   #v-home .ha-sec{left:auto;right:10px;bottom:-24px;width:58px;height:58px;border-radius:16px}
   #v-home .ha-tag{left:auto;right:56px;bottom:-12px;padding:7px 22px 7px 12px}
 }
+
+/* ===== v20: mockup pass (full-bleed home, carousel bar, choose-gear sheet) ===== */
+.status .chk{display:none}
+.cta .btn .chev{display:none}
+/* ---- carousel ---- */
+.kb-hero{--sw:max(160px,min(58vw,330px,calc((100vh - 440px)*.74)));flex-wrap:wrap;background:linear-gradient(180deg,#DCE4EF,#C9D4E3)}
+.car{padding:0 calc((100% - var(--sw))/2 + var(--sw)*.15)}
+.car .hstall{margin:18px calc(var(--sw)*-.15) 0;transform:scale(.9);transform-origin:50% 100%;z-index:1;filter:brightness(.8) saturate(.92);transition:transform .28s ease,margin-top .28s ease,filter .28s ease}
+.car .hstall.on{margin-top:0;transform:none;z-index:3;filter:none}
+.car .hstall>.plate,.car .hstall:not(.on)>.plate{font-size:15px;padding:3px 13px}
+.car .hstall:not(.on)>.plate{font-size:12.500px;padding:2px 9px}
+.hsz{display:none}
+.car .hs-in>img.pl{padding:0;background:none;border-radius:0;border:0;box-shadow:none;margin:0}
+.car .hstall.pv,.car .hstall.nx{text-align:center}
+#hsDots .hd.off{display:none}
+#hsDots .hd i{width:20px;height:20px;background-size:12px}
+.carbar{flex:1 1 100%;display:flex;align-items:center;justify-content:space-between;gap:10px;padding:7px 14px 23px;background:linear-gradient(180deg,#6E4827 0,#4B2F18 100%);box-shadow:inset 0 10px 14px -10px rgba(0,0,0,.6)}
+.cb-s{flex:none;width:46px;height:46px}
+.kb-hero .carbar .peek{position:static;display:grid;place-items:center;width:46px;height:46px;top:auto;left:auto;right:auto;background:#fff;box-shadow:0 8px 16px -6px rgba(0,0,0,.6)}
+.kb-hero .carbar .peek::before{width:10px;height:10px;border-color:var(--blue)}
+.kb-hero .carbar .peek:disabled{opacity:.35}
+.cb-m{flex:1;min-width:0;text-align:center;color:#fff}
+.cdots{display:flex;justify-content:center;align-items:center;gap:7px;height:16px}
+.cdots button{width:7px;height:7px;padding:0;border-radius:50%;background:rgba(255,255,255,.42);position:relative}
+.cdots button::after{content:"";position:absolute;inset:-9px -3px}
+.cdots button[aria-selected=true]{width:11px;height:11px;background:#fff;box-shadow:0 0 0 3px var(--blue)}
+.cb-cap{display:block;font-size:13px;font-weight:600;margin-top:3px;line-height:1.2}
+.cb-l2{display:block;font-size:10.500px;color:#E3CFB5;line-height:1.3;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.cb-info{display:inline}
+.carbar .hback{position:static;display:inline;margin:0 0 0 6px;padding:0;background:none;color:#fff;box-shadow:none;font:700 10.500px/1.3 var(--body);text-decoration:underline;text-underline-offset:2px;border-radius:0}
+.carbar .hback svg{display:none}
+#kb[data-view=line] .carbar,#kb[data-step=review] .carbar{display:none}
+/* ---- kit bar ---- */
+.kbag{width:46px;height:46px;border:0;border-radius:14px;background:#EAF1FD;color:var(--blue);display:grid;place-items:center;box-shadow:inset 0 0 0 1px #D2E0F6}
+.kbag svg{width:24px;height:24px}
+.kb-bar .tot{flex:1 1 auto;min-width:0}
+.kb-bar .tot span{font:800 17px/1.15 var(--body);letter-spacing:0;text-transform:none;color:var(--navy)}
+.kb-bar .tot em{display:block;margin:1px 0 0;font-size:12.500px;color:var(--muted)}
+.kprog{display:flex;align-items:center;margin-top:6px;max-width:210px}
+.kprog u{flex:none;width:8px;height:8px;border-radius:50%;background:#fff;box-shadow:inset 0 0 0 1.500px #BFCDE2;text-decoration:none}
+.kprog s{flex:1;height:2.500px;background:#D5DFEE;text-decoration:none}
+.kprog u.on{background:var(--blue);box-shadow:none}.kprog s.on{background:var(--blue)}
+.kb-bar .fitc{display:none}
+.kb-pack{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;margin:0 0 9px;padding:10px 14px;border-radius:14px;background:var(--surface);box-shadow:inset 0 0 0 1.500px var(--blue);color:var(--blue);font-weight:800;font-size:14.500px}
+.kb-pack[hidden]{display:none}
+/* ---- choose-gear sheet ---- */
+.kbs-wrap{position:fixed;inset:0;z-index:60;background:rgba(10,24,48,.14)}
+.kbs{max-height:calc(100% - 150px);padding:6px 16px 0;border-radius:24px 24px 0 0}
+.kbs .kb-grab{margin-bottom:7px}
+.kbs-h{align-items:flex-start}
+.kbs-h h3{font:800 21px/1.15 var(--body);text-transform:none;letter-spacing:-.01em}
+.kbs-sub{font-size:12.500px;margin-top:2px}
+.kbs-x{width:36px;height:36px;font-size:23px}
+.kc{display:grid;grid-template-columns:31% minmax(0,1fr);gap:12px;align-items:start;margin:7px 0 6px}
+.kc-im{position:relative;border-radius:16px;overflow:hidden;background:#0A1222;aspect-ratio:1/1}
+.kc-im img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.kc-im .gt{position:absolute;left:6px;bottom:6px;padding:2px 8px;border-radius:999px;background:rgba(88,100,122,.92);color:#fff;font:800 11px/1.4 var(--disp);letter-spacing:.08em;text-transform:uppercase}
+.kc-im .gt.n{background:var(--blue)}
+.kc-l{display:block;font-size:11.500px;font-weight:700;color:var(--muted);margin:0 0 4px}
+.kpl{display:flex;gap:6px;margin-bottom:7px}
+.kpl button{flex:1 1 0;min-width:0;min-height:36px;padding:6px 6px;border-radius:999px;background:var(--surface);box-shadow:inset 0 0 0 1.500px var(--line);font-weight:700;font-size:13.500px;color:var(--navy);white-space:nowrap}
+.kpl button[aria-checked=true]{background:var(--blue);color:#fff;box-shadow:0 6px 12px -6px var(--glow)}
+.kc-d{display:flex;align-items:center;gap:7px;font-size:11px;color:var(--muted);margin:0;line-height:1.25}
+.kc-d .fitc{font-size:11.500px;padding:4px 9px 4px 6px}
+.kc-szh{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:4px}
+.kc-szh .kc-l{margin:0}
+.kc-guide{color:var(--blue);font-weight:700;font-size:12.500px;text-decoration:underline;text-underline-offset:3px}
+.kpl.sz{overflow-x:auto;scrollbar-width:none;margin:0 -16px 6px;padding:2px 16px 4px}
+.kpl.sz::-webkit-scrollbar{display:none}
+.kpl.sz button{flex:1 0 auto;min-width:58px;padding:6px 12px}
+.kpl.sz button.rec:not([aria-checked=true]){box-shadow:inset 0 0 0 1.500px var(--blue);color:var(--blue)}
+.kc-pr{margin:5px 0 0}
+.kc-pr b{font:800 27px/1 var(--body);letter-spacing:-.02em}
+.kc-add{display:flex;width:100%;border-radius:16px;padding:13px 16px;font-size:16.500px;font-weight:800;gap:10px}
+.kc-add svg{width:20px;height:20px}
+.kc-add[disabled]{opacity:.6}
+.kc-alt{display:flex;justify-content:space-between;gap:10px;margin:7px 2px 8px;font-size:12px;white-space:nowrap}
+.kc-alt button{color:var(--blue);font-weight:600;text-decoration:underline;text-underline-offset:3px;text-align:left}
+.kc-alt .rm{color:var(--red);text-align:right}
+.kc-bag{position:relative;height:calc(58px + env(safe-area-inset-bottom,0px));margin:0 -16px;overflow:hidden;background:#0A1222}
+.kc-bag img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 60%;transform-origin:50% 100%}
+.kc-bag::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(8,16,32,.82) 0,rgba(8,16,32,.35) 45%,rgba(8,16,32,0) 70%)}
+.kc-bag span{position:absolute;z-index:1;left:16px;top:29px;transform:translateY(-50%);color:#D8E4F6;font-size:12px;line-height:1.25}
+.kc-bag b{display:block;color:#fff;font-size:15px}
+.kc-bag.bump img{animation:kcbag .5s cubic-bezier(.3,1.6,.4,1)}
+@keyframes kcbag{0%{transform:scale(1)}40%{transform:scale(1.07)}100%{transform:scale(1)}}
+@media (min-width:821px){
+  .kbs{max-height:86%}
+}
+@media (max-width:820px){
+  /* ---- home, phone: full-bleed photo that fades into the page ---- */
+  body:not(.subon):has(#v-home.on) #stage{top:0}
+  body:not(.subon):has(#v-home.on) .brand .ha-badge{width:56px}
+  #v-home{padding-top:0;overflow-x:hidden}
+  #v-home .hero{justify-content:flex-start}
+  #v-home .hero-art{flex:1 1 250px;min-height:228px;max-height:min(56vh,calc(100vw/1.12));margin:0 -14px 0}
+  #v-home .ha-main{top:30px;height:auto;bottom:0;border-radius:0;box-shadow:none;-webkit-mask-image:linear-gradient(180deg,transparent 0,rgba(0,0,0,.5) 7%,#000 17%,#000 58%,rgba(0,0,0,.42) 77%,transparent 95%);mask-image:linear-gradient(180deg,transparent 0,rgba(0,0,0,.5) 7%,#000 17%,#000 58%,rgba(0,0,0,.42) 77%,transparent 95%)}
+  #v-home .ha-main img{object-position:50% 22%;filter:contrast(1.03) saturate(1.05)}
+  #v-home .ha-main::after{display:none}
+  #v-home .ha-sec,#v-home .ha-tag{display:none}
+  #v-home .hero-t{margin-top:-64px;position:relative;z-index:2}
+  #v-home .hero-t::before{display:none}
+  #v-home .home-h{text-shadow:0 0 18px rgba(245,249,255,.9),0 0 4px rgba(245,249,255,.9)}
+  #v-home .cta{flex-direction:column;flex-wrap:nowrap;gap:9px;margin-top:13px}
+  #v-home .cta .btn{position:relative;width:100%;justify-content:center;padding:13px 44px;font-size:16.500px;border-radius:999px}
+  #v-home .cta .btn.gl{background:#fff;box-shadow:inset 0 0 0 1.500px #BFD3F5;border:0;backdrop-filter:none}
+  #v-home .cta .btn .chev{display:block;position:absolute;right:18px;top:50%;width:17px;height:17px;margin-top:-8.500px;opacity:.9}
+  #v-home .cta .btn.gl .chev{color:var(--blue)}
+  #v-home .status .chk{display:inline;color:var(--navy);font-weight:800}
+  #v-home .status .chk::after{content:"\00B7";margin:0 7px;color:var(--muted)}
+  #v-home .status{display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-size:12px}
+  #v-home .status .pulse{display:inline-block;vertical-align:middle;margin-right:8px}
+  #v-home .status .rinkchip:empty{display:none}
+  .kb-bar .btn{padding:13px 16px;font-size:16px}
+  .kb-bar .tot span{font-size:16px}
+}
+@media (max-width:820px) and (max-height:760px){
+  #v-home .hero-t{margin-top:-50px}
+  #v-home .cta .btn{padding:11px 44px}
+}
 </style>
 </head>
 <body>
@@ -1197,15 +1317,15 @@ img[data-img]{display:block;max-width:100%}
         <h1 class="home-h"><span>Start hockey.</span><span>Pass it on.</span></h1>
         <p class="home-sub">Get a sized starter kit with its return value printed up front. When your player outgrows it, pass it back and it goes to the next family.</p>
         <div class="cta">
-          <button class="btn pri" data-open="kits"><svg><use href="#i-kit"/></svg>Get a kit</button>
-          <button class="btn gl" id="heroPass"><svg style="color:var(--blue)"><use href="#i-back"/></svg>Pass back gear</button>
+          <button class="btn pri" data-open="kits"><svg><use href="#i-kit"/></svg>Get a kit<svg class="chev" aria-hidden="true"><use href="#i-next"/></svg></button>
+          <button class="btn gl" id="heroPass"><svg style="color:var(--blue)"><use href="#i-back"/></svg>Pass back gear<svg class="chev" aria-hidden="true"><use href="#i-next"/></svg></button>
         </div>
         <div class="paths" role="group" aria-label="Where do you want to go">
           <button class="path" data-open="learn"><span class="ico sm"><svg><use href="#i-learn"/></svg></span><span><b>New to hockey</b><em>Start here</em></span></button>
           <button class="path" data-tab="map"><span class="ico sm"><svg><use href="#i-pin"/></svg></span><span><b>Find a rink</b><em>Rinks near you</em></span></button>
           <button class="path" data-open="compare"><span class="ico sm"><svg><use href="#i-compare"/></svg></span><span><b>See the cost</b><em>Keep or pass back</em></span></button>
         </div>
-        <div class="status"><i class="pulse"></i>St. Louis first. Minnesota next.<span class="rinkchip" id="rinkNote"></span></div>
+        <div class="status"><i class="pulse"></i><b class="chk">Drop Pass Checked</b>St. Louis first. Minnesota next.<span class="rinkchip" id="rinkNote"></span></div>
         <div class="rinkset" id="rinkSet"><input id="rinkIn" type="text" placeholder="Your home rink" aria-label="Home rink name" maxlength="40" style="letter-spacing:0"><button class="btn pri sm" id="rinkSave">Save</button></div>
       </div>
       <div class="hero-art" id="heroArt">
@@ -1373,14 +1493,14 @@ img[data-img]{display:block;max-width:100%}
         <div class="kb-hero">
           <div class="lineup" id="lineup" role="listbox" aria-label="Locker stalls by age, smallest to biggest"></div>
           <button class="peek l" id="stPrev" aria-label="Previous age stall"><span class="plate" id="pkL">AGE 8</span></button>
-          <div class="car" id="car" role="group" aria-label="Locker stalls by age. Swipe left or right to change age."></div><span id="hsPlate" hidden></span><button class="hback" id="hsBack" aria-label="Compare every age side by side"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20V9m5.300 11V4m5.400 16v-8M20 20V7" fill="none" stroke="currentColor" stroke-width="2.600" stroke-linecap="round"/></svg>Compare ages</button><div id="hsDots"></div><div class="bagban" id="bagBan"><img data-img="bag" alt="An open hockey bag packed with gear"><div><b id="bagT">Your bag</b><span id="bagS"></span></div></div>
+          <div class="car" id="car" role="group" aria-label="Locker stalls by age. Swipe left or right to change age."></div><div class="carbar" id="carBar"><span class="cb-s" id="cbL"></span><div class="cb-m"><div class="cdots" id="carDots" role="tablist" aria-label="Age"></div><span class="cb-cap">Swipe to compare sizes</span><span class="cb-l2" id="cbL2"><span class="cb-info" id="carInfo"></span></span></div><span class="cb-s" id="cbR"></span></div><span id="hsPlate" hidden></span><button class="hback" id="hsBack" aria-label="Compare every age side by side"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20V9m5.300 11V4m5.400 16v-8M20 20V7" fill="none" stroke="currentColor" stroke-width="2.600" stroke-linecap="round"/></svg>See all ages</button><div id="hsDots"></div><div class="bagban" id="bagBan"><img data-img="bag" alt="An open hockey bag packed with gear"><div><b id="bagT">Your bag</b><span id="bagS"></span></div></div>
           <button class="peek r" id="stNext" aria-label="Next age stall"><span class="plate" id="pkR">AGE 10</span></button>
           <div class="stalls" id="stalls" hidden></div>
         </div>
         <div class="kb-sheet">
           <i class="kb-grab" aria-hidden="true"></i>
           <div id="kbBuild">
-            <div class="kb-top"><div><h3 class="kb-h" id="kbH">Build the kit</h3><p class="kb-s"><span class="s-line">Every age, side by side. Tap a stall to pick it, tap it again to open it.</span><span class="s-open">Swipe for the next age. Tap a piece, pick the size and brand, and it goes in the bag.</span></p></div><button class="kb-chk" id="kbChk" aria-expanded="false" aria-controls="fitPanel"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.500 16.500 16.500 3.500l4 4-13 13-4-4ZM7 13l1.500 1.500M10 10l1.500 1.500M13 7l1.500 1.500" fill="none" stroke="currentColor" stroke-width="1.800" stroke-linecap="round" stroke-linejoin="round"/></svg>Check size</button></div>
+            <div class="kb-top"><div><h3 class="kb-h" id="kbH">Build the kit</h3><p class="kb-s"><span class="s-line">Every age, side by side. Tap a stall to pick it, tap it again to open it.</span><span class="s-open">Tap any piece of gear in the locker. Pick the brand and size, and it goes in the bag.</span></p></div><button class="kb-chk" id="kbChk" aria-expanded="false" aria-controls="fitPanel"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.500 16.500 16.500 3.500l4 4-13 13-4-4ZM7 13l1.500 1.500M10 10l1.500 1.500M13 7l1.500 1.500" fill="none" stroke="currentColor" stroke-width="1.800" stroke-linecap="round" stroke-linejoin="round"/></svg>Check size</button></div>
             <div class="fitpanel" id="fitPanel" hidden>
               <div>
                 <div class="fld"><label for="age">Age <b id="ageV">7</b></label><input id="age" type="range" min="3" max="14" value="7"></div>
@@ -1389,7 +1509,7 @@ img[data-img]{display:block;max-width:100%}
               </div>
               <div class="fitout" aria-live="polite"><div class="kfor" id="kFor">Starter kit</div><div class="row"><div class="size" id="kSize">Youth M</div><div class="net" id="kNet">$99 after return</div></div><div class="chips" id="kChips"></div><div class="avail ok" id="kAvail">Enter your ZIP to check pickup.</div></div>
             </div>
-            <div class="kb-modes" id="kbModes" role="radiogroup" aria-label="What a tap does">
+            <button class="kb-pack" id="kbPack"></button><div class="kb-modes" id="kbModes" role="radiogroup" aria-label="What a tap does">
               <button role="radio" data-km="used" class="used" aria-checked="true"><i></i>Used value</button>
               <button role="radio" data-km="new" class="new" aria-checked="false"><i></i>New upgrade</button>
               <button role="radio" data-km="keep" class="keep" aria-checked="false"><i></i>Keep ours</button>
@@ -1400,7 +1520,7 @@ img[data-img]{display:block;max-width:100%}
           </div>
           <div id="kbReview" hidden></div>
         </div>
-        <div class="kb-bar" id="kbBar"><div class="kbtoast" id="kbToast" role="status" aria-live="polite"></div><button class="kbag" id="kbBag" data-n="0" aria-label="Open the bag"><img data-img="bag" alt=""><b id="kbBagN">0</b></button><div class="tot"><span id="kbFor">Starter kit</span><b id="kbTot">$199</b><em id="kbNet">$99 after return</em></div><span class="fitc" id="kbFit">Fits</span><button class="btn pri" id="kbGo">Review kit</button></div>
+        <div class="kb-bar" id="kbBar"><div class="kbtoast" id="kbToast" role="status" aria-live="polite"></div><button class="kbag" id="kbBag" data-n="0" aria-label="Open the bag"><svg aria-hidden="true"><use href="#i-kit"/></svg><b id="kbBagN" hidden>0</b></button><div class="tot"><span id="kbFor">Starter kit</span><b id="kbTot" hidden>$199</b><em id="kbNet">0 of 7 items</em><i class="kprog" id="kbProg" aria-hidden="true"></i></div><span class="fitc" id="kbFit">Fits</span><button class="btn pri" id="kbGo">Review kit</button></div>
         <button id="kitGo" hidden>Reserve in the app</button>
       </div>
       <p class="tiny" id="kbMath" style="margin:8px 2px 0"></p>
@@ -1794,11 +1914,13 @@ applyImgs();
     carSync(c,st);
     var T=kbTotals(st), fit=kbFits(st,c.a);
     $('#kbFor').textContent=c.name?c.name+'’s kit':'Age '+c.a+' kit';
-    $('#kbTot').textContent='$'+T.t; $('#kbNet').textContent=T.n?'$'+Math.max(0,T.t-T.c)+' after return':'Bag is empty';
+    $('#kbTot').textContent='$'+T.t; $('#kbNet').textContent=T.n+' of '+PIECES.length+' items'+(T.n?' \u00B7 $'+T.t:'');
+    $('#kbProg').innerHTML=PIECES.map(function(p,i){return (i?'<s'+(i<T.n?' class="on"':'')+'></s>':'')+'<u'+(i<T.n?' class="on"':'')+'></u>'}).join('');
+    var pk=$('#kbPack'),left=PIECES.length-T.n-PIECES.filter(function(p){return st.s[p.k].o==='keep'}).length;pk.hidden=left<1;pk.textContent=T.n||left<PIECES.length?'Add the other '+left+(left===1?' piece':' pieces'):'Pack the full kit \u00B7 $'+KIT_PRICE;
     $('#kbBagN').textContent=T.n; $('#kbBag').setAttribute('data-n',T.n); $('#kbBag').setAttribute('aria-label','Open the bag, '+T.n+' of '+PIECES.length+' pieces');
     $('#bagT').textContent=c.name?c.name+'’s bag':'Age '+c.a+' bag'; $('#bagS').textContent=T.n+' of '+PIECES.length+' pieces packed · $'+T.t;
     var fc=$('#kbFit'); fc.textContent=fit?(c.name?'Fits '+c.name:'Fits age '+c.a):'Check sizes'; fc.className='fitc'+(fit?'':' warn');
-    $('#kbGo').innerHTML=(kbStep==='review'?'Reserve '+whoS+' kit · $'+T.t:T.n?'Review kit · $'+T.t:'Pack full kit · $'+KIT_PRICE)+'<svg aria-hidden="true"><use href="#i-next"/></svg>';
+    $('#kbGo').innerHTML=(kbStep==='review'?'Reserve '+whoS+' kit · $'+T.t:'Review kit')+'<svg aria-hidden="true"><use href="#i-next"/></svg>';
     $('#kbMath').textContent='Sample prices. A full starter kit is $'+KIT_PRICE+' with up to $'+CREDIT+' back when you pass it back. Final prices and return values are set after the St. Louis pilot.';
     $('#kbBuild').hidden=kbStep!=='build'; $('#kbReview').hidden=kbStep!=='review';
     if(kbStep==='build'){
@@ -1833,51 +1955,72 @@ applyImgs();
     applyImgs($('#kb'));
     if(kbOpen>=0)kbSheet(); else $('#kbsWrap').hidden=true;
   }
+  var BRANDS=['Bauer','CCM'], kbD=null, kbBusy=false;
+  function kbSzLbl(P,v){return v.replace(/^Youth /,P.k==='skates'?'Y':'').replace(/^Junior ?/,P.k==='skates'?'Jr ':'Jr')}
   function kbSheet(){
-    var c=kbCtx(), st=kbState(c.key), P=PIECES[kbOpen], x=st.s[P.k], T=kbTotals(st), rec=defSize(P,c.a), sz=kbSz(P,x,c.a);
-    var h='<i class="kb-grab" aria-hidden="true"></i><div class="kbs-h"><h3>Choose '+P.t+'</h3><button class="kbs-x" data-x aria-label="Close">×</button></div>'+
-      (P.newOnly?'<p class="kbs-sub">Helmets are new only. We never resell a used helmet.</p>':'')+
-      '<div class="kbs-fit"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.500 16.500 16.500 3.500l4 4-13 13-4-4ZM7 13l1.500 1.500M10 10l1.500 1.500M13 7l1.500 1.500" fill="none" stroke="currentColor" stroke-width="1.800" stroke-linecap="round" stroke-linejoin="round"/></svg><span>'+(c.name?esc(c.name):'Age '+c.a)+' · '+fmtHt(+ht.value)+' · <b>'+rec+' recommended</b></span><select id="kbSize" aria-label="Size">'+P.sz.map(function(v){return '<option'+(v===sz?' selected':'')+'>'+v+'</option>'}).join('')+'</select></div>'+
-      '<div class="kb-opts n'+P.o.length+'">'+P.o.map(function(o,i){var on=x.o===i,d=o.p-P.o[0].p;
-        return '<article class="kbo'+(on?' on':'')+'"><div class="im"><img data-img="'+o.im+'" alt="'+P.n+', '+o.g+'">'+(P.newOnly?'':'<span class="gt '+o.c+'">'+o.g+'</span>')+(o.up?'<span class="upx">'+o.up+'<b>+$'+d+'</b></span>':'')+'</div><em class="sz">'+sz+'</em><b class="pr">$'+o.p+'</b><p>'+o.d+'</p>'+(d>0&&!o.up?'<span class="up">+$'+d+' upgrade</span>':'')+'<button class="btn '+(on?'pri':'gl')+' sm" data-ko="'+i+'" aria-pressed="'+on+'">'+(on?'In the bag':kbIn(x)?'Switch':'Add to bag')+'</button></article>'}).join('')+'</div>'+
-      '<button class="kb-keep" data-keep role="switch" aria-checked="'+(x.o==='keep')+'"><span class="ki"></span><span class="kt"><b>We already have '+P.t+'</b><em>Keep ours · $0</em></span><span class="kr"><i></i>Keep ours</span></button>'+
-      (x.o==='off'?'':'<button class="kb-rm" data-rm>'+(x.o==='keep'?'Put back in the locker':'Take out of the bag')+'</button>')+
-      '<div class="kbs-f"><div class="tot"><span>'+(c.name?esc(c.name)+'’s kit':'Age '+c.a+' kit')+'</span><b>$'+T.t+'</b><em>$'+Math.max(0,T.t-T.c)+' after return</em></div><button class="btn pri" data-rev>Review kit · $'+T.t+'<svg aria-hidden="true"><use href="#i-next"/></svg></button></div>';
+    var c=kbCtx(), st=kbState(c.key), P=PIECES[kbOpen], x=st.s[P.k], T=kbTotals(st), rec=defSize(P,c.a), inb=kbIn(x), fresh=!kbD||kbD.k!==P.k;
+    if(fresh){var ni=-1;P.o.forEach(function(q,j){if(ni<0&&q.c==='n')ni=j});
+      kbD={k:P.k,o:inb?x.o:(kbMode==='new'&&ni>=0?ni:0),sz:kbSz(P,x,c.a),br:x.br&&BRANDS.indexOf(x.br)>-1?x.br:BRANDS[0]}}
+    var d=kbD, o=P.o[d.o]||P.o[0], bi=BRANDS.indexOf(d.br), im=bi>0?P.o[(d.o+1)%P.o.length].im:o.im, fit=d.sz===rec;
+    var whoS=c.name?esc(c.name)+'’s':'the', same=inb&&x.o===d.o&&kbSz(P,x,c.a)===d.sz&&(x.br||BRANDS[0])===d.br;
+    var h='<i class="kb-grab" aria-hidden="true"></i><div class="kbs-h"><div><h3>Choose '+P.t+'</h3><p class="kbs-sub">'+(P.newOnly?'Helmets are new only. ':'')+'Select a brand and size for '+(c.name?esc(c.name)+' (Age '+c.a+')':'age '+c.a)+'.</p></div><button class="kbs-x" data-x aria-label="Close">×</button></div>'+
+      '<div class="kc"><div><div class="kc-im"><img id="kcImg" data-img="'+im+'" alt="'+P.n+', '+d.br+', '+o.g+'"><span class="gt '+o.c+'">'+o.g+'</span></div><div class="kc-pr"><b>$'+o.p+'</b></div></div>'+
+      '<div class="kc-r"><span class="kc-l">Brand</span><div class="kpl" role="radiogroup" aria-label="Brand">'+BRANDS.map(function(b){return '<button role="radio" data-br="'+b+'" aria-checked="'+(b===d.br)+'">'+b+'</button>'}).join('')+'</div>'+
+      '<span class="kc-l">Condition</span><div class="kpl" role="radiogroup" aria-label="Condition">'+P.o.map(function(q,j){return '<button role="radio" data-kc="'+j+'" aria-checked="'+(j===d.o)+'">'+(q.up?'New +':q.c==='n'?'New':q.g.replace('Grade ','Used '))+'</button>'}).join('')+'</div>'+
+      '<p class="kc-d"><span class="fitc'+(fit?'':' warn')+'">'+(fit?(c.name?'Fits '+esc(c.name):'Fits age '+c.a):'Check size')+'</span>'+o.d+'. Sample photo.</p></div></div>'+
+      '<div class="kc-szh"><span class="kc-l">Size'+(c.name?' \u00B7 '+esc(c.name)+' is about '+fmtHt(+ht.value):'')+'</span><button class="kc-guide" data-guide>Size guide</button></div>'+
+      '<div class="kpl sz" role="radiogroup" aria-label="Size">'+P.sz.map(function(v){return '<button role="radio" data-ksz="'+v+'" aria-checked="'+(v===d.sz)+'"'+(v===rec?' class="rec"':'')+' aria-label="'+v+(v===rec?', recommended':'')+'">'+kbSzLbl(P,v)+'</button>'}).join('')+'</div>'+
+      '<button class="btn pri kc-add" data-add'+(same?' disabled':'')+'><svg aria-hidden="true"><use href="#i-kit"/></svg>'+(same?'In '+whoS+' bag':inb?'Update '+whoS+' bag':'Add to '+whoS+' bag')+'</button>'+
+      '<div class="kc-alt"><button data-keep>'+(x.o==='keep'?'Keeping ours. Undo':'Have '+(P.k==='helmet'||P.k==='stick'?'one':'these')+'? Keep ours')+'</button>'+(inb?'<button class="rm" data-rm>Take out of the bag</button>':'')+'</div>'+
+      '<div class="kc-bag" id="kcBag"><img data-img="bag" alt=""><span><b>'+(c.name?esc(c.name)+'’s bag':'Age '+c.a+' bag')+'</b>'+T.n+' of '+PIECES.length+' items</span></div>';
     var el=$('#kbs'); el.innerHTML=h; applyImgs(el); $('#kbsWrap').hidden=false;
+    var sp=el.querySelector('.sz [aria-checked=true]'); if(sp){var row=sp.parentNode;row.scrollLeft=sp.offsetLeft-row.clientWidth/2+sp.offsetWidth/2}
+    if(fresh)kbFocus(kbOpen);
+  }
+  function kbFocus(i){
+    if($('#kb').getAttribute('data-view')!=='open'||kbStep!=='build')return;
+    var g=car.querySelector('.hstall.on .gp[data-p="'+i+'"]'),sc=$('#s-kits'),sh=$('#kbs');if(!g||!sc||!sh)return;
+    requestAnimationFrame(function(){var r=g.getBoundingClientRect(),top=Math.max(sc.getBoundingClientRect().top,56),band=sh.getBoundingClientRect().top-top;if(band<70)return;
+      var delta=(r.top+r.height/2)-(top+band/2);sc.scrollTo({top:Math.max(0,sc.scrollTop+delta),behavior:RM?'auto':'smooth'})});
   }
   function kbPop(i){var d=$$('#hsDots .hd')[i];if(d&&!RM){d.classList.remove('pop');void d.offsetWidth;d.classList.add('pop')}}
-  function kbClose(){kbOpen=-1;$('#kbsWrap').hidden=true}
+  function kbClose(){kbOpen=-1;kbD=null;$('#kbsWrap').hidden=true}
   $('#kb').addEventListener('click',function(e){
     var c=kbCtx(), st=kbState(c.key), b, i;
     if((b=e.target.closest('[data-km]'))){kbMode=b.dataset.km;kbRender();return}
-    if((b=e.target.closest('[data-ke]'))){kbOpen=+b.dataset.ke;kbSheet();return}
+    if((b=e.target.closest('[data-ke]'))){kbOpen=+b.dataset.ke;kbD=null;kbSheet();return}
     if((b=e.target.closest('[data-kb]'))){i=+b.dataset.kb;var P=PIECES[i],x=st.s[P.k],was=x.o,ni=-1;P.o.forEach(function(o,j){if(ni<0&&o.c==='n')ni=j});
       x.o=kbMode==='keep'?(x.o==='keep'?'off':'keep'):kbMode==='new'?ni:0;
-      if(x.o===was){kbOpen=i;kbSheet();return}
+      if(x.o===was){kbOpen=i;kbD=null;kbSheet();return}
       kbSave();kbRender();kbPop(i);kbMoved(i,was,x.o,0);return}
     if((b=e.target.closest('[data-goto]'))){kbStep=b.dataset.goto;kbRender();return}
     if((b=e.target.closest('[data-get]'))){st.get=b.dataset.get;kbSave();kbRender();return}
     if(e.target.closest('#kbChk')){var fp=$('#fitPanel');fp.hidden=!fp.hidden;$('#kbChk').setAttribute('aria-expanded',!fp.hidden);return}
-    if(e.target.closest('#kbBag')){if(kbTotals(st).n){kbStep='review';kbRender();var sb=$('.kb-hero');if(sb&&sb.scrollIntoView)sb.scrollIntoView({block:'start',behavior:RM?'auto':'smooth'})}else kbToast('Bag is empty. Tap a piece to add it.');return}
+    if(e.target.closest('#kbBag')){kbStep='review';kbRender();var sb=$('.kb-hero');if(sb&&sb.scrollIntoView)sb.scrollIntoView({block:'start',behavior:RM?'auto':'smooth'});return}
+    if(e.target.closest('#kbPack')){var k=0;PIECES.forEach(function(p,j){var y=st.s[p.k];if(y.o==='off'){y.o=0;(function(j,k){setTimeout(function(){kbFly(j,true)},k*130)})(j,k);k++}});kbSave();kbRender();setTimeout(function(){kbToast('<b>'+(k===PIECES.length?'Full kit':k+(k===1?' piece':' pieces'))+'</b> packed in '+(c.name?esc(c.name)+'\u2019s':'the')+' bag',1)},k*130+500);return}
     if(e.target.closest('#kbGo')){
       if(kbStep==='review'){kbSave();$('#kitGo').click();return}
-      if(!kbTotals(st).n){var k=0;PIECES.forEach(function(p,j){var y=st.s[p.k];if(y.o==='off'){y.o=0;(function(j,k){setTimeout(function(){kbFly(j,true)},k*130)})(j,k);k++}});kbSave();kbRender();setTimeout(function(){kbToast('<b>Full kit</b> packed in '+(c.name?esc(c.name)+'’s':'the')+' bag',1)},k*130+500);return}
       kbStep='review';kbRender();var sh=$('.kb-sheet');if(sh&&sh.scrollIntoView)sh.scrollIntoView({block:'start',behavior:RM?'auto':'smooth'})}
   });
   $('#kbsWrap').addEventListener('click',function(e){
-    if(kbOpen<0)return;
-    var c=kbCtx(), st=kbState(c.key), P=PIECES[kbOpen], x=st.s[P.k], b, i=kbOpen, done=false, was=x.o;
+    if(kbOpen<0||kbBusy)return;
+    var c=kbCtx(), st=kbState(c.key), P=PIECES[kbOpen], x=st.s[P.k], b, i=kbOpen, was=x.o;
     if(e.target===this||e.target.closest('[data-x]')){kbClose();return}
-    if((b=e.target.closest('[data-ko]'))){x.o=+b.dataset.ko;done=true}
-    else if(e.target.closest('[data-keep]')){x.o=x.o==='keep'?'off':'keep';done=true}
-    else if(e.target.closest('[data-rm]')){x.o='off';done=true}
-    else if(e.target.closest('[data-rev]')){kbClose();kbStep='review';kbRender();var sh=$('.kb-sheet');if(sh&&sh.scrollIntoView)sh.scrollIntoView({block:'start',behavior:RM?'auto':'smooth'});return}
-    else return;
-    kbSave();kbRender();
-    var now=x.o;
-    if(done)setTimeout(function(){if(kbOpen===i){kbClose();kbPop(i);kbMoved(i,was,now,60)}},RM?0:380);
+    if((b=e.target.closest('[data-br]'))){kbD.br=b.dataset.br;kbSheet();return}
+    if((b=e.target.closest('[data-kc]'))){kbD.o=+b.dataset.kc;kbSheet();return}
+    if((b=e.target.closest('[data-ksz]'))){kbD.sz=b.dataset.ksz;kbSheet();return}
+    if(e.target.closest('[data-guide]')){kbClose();var fp=$('#fitPanel');fp.hidden=false;$('#kbChk').setAttribute('aria-expanded','true');if(fp.scrollIntoView)fp.scrollIntoView({block:'center',behavior:RM?'auto':'smooth'});return}
+    if(e.target.closest('[data-keep]')){x.o=x.o==='keep'?'off':'keep';kbSave();kbClose();kbRender();kbPop(i);kbMoved(i,was,x.o,0);return}
+    if(e.target.closest('[data-rm]')){x.o='off';kbSave();kbClose();kbRender();kbMoved(i,was,'off',0);return}
+    if((b=e.target.closest('[data-add]'))){
+      if(b.disabled)return;
+      var inWas=kbIn(x), info=inWas?null:kbSrc(i), bagEl=$('#kcBag'), t=bagEl?bagEl.getBoundingClientRect():null, whoS=c.name?esc(c.name)+'’s':'the';
+      x.o=kbD.o;x.sz=kbD.sz;x.br=kbD.br;kbSave();kbBusy=true;kbRender();
+      var fin=function(){kbBusy=false;if(kbOpen===i)kbClose();kbPop(i);kbBump();kbToast('<b>'+P.n+'</b> '+(inWas?'updated in ':'added to ')+whoS+' bag',1)};
+      if(inWas||RM||!info||!t){setTimeout(fin,RM?0:260);return}
+      kbFlyTo(info,t,function(){var nb=$('#kcBag');if(nb){nb.classList.remove('bump');void nb.offsetWidth;nb.classList.add('bump')}setTimeout(fin,330)});
+    }
   });
-  $('#kbsWrap').addEventListener('change',function(e){if(e.target.id==='kbSize'&&kbOpen>=0){var c=kbCtx(),st=kbState(c.key);st.s[PIECES[kbOpen].k].sz=e.target.value;kbSave();kbRender()}});
   function kbKid(){var a=+age.value,ix=-1;fam.forEach(function(p,i){if(ix<0&&p.a===a)ix=i});if(ix>=0){selKid=ix;renderKids();renderShop();renderFam()}}
   $('#stPrev').addEventListener('click',kbKid);$('#stNext').addEventListener('click',kbKid);
 
@@ -1892,7 +2035,7 @@ applyImgs();
   car.innerHTML=Object.keys(HT).map(function(a){a=+a;
     return '<div class="hstall" data-age="'+a+'" style="--hue:'+HUE[a]+'deg"><span class="plate">AGE '+a+'</span><em class="hsz">'+fmtHt(HT[a])+' · '+sizeFor(HT[a])[0]+'</em><div class="hs-in"><img class="pl" data-img="hPl" alt="Age '+a+' locker stall. Gear sized for a player about '+fmtHt(HT[a]).replace('"',' in').replace("'",' ft ')+'" draggable="false">'+
       GORD.map(function(n){var g=GEO[n],f=gF(n,a);
-        return '<img class="gp" data-p="'+PIX[n]+'" data-ke="'+PIX[n]+'" data-img="hg_'+n+'" alt="" draggable="false" style="left:'+(g.box[0]/GW*100).toFixed(2)+'%;top:'+((g.box[1]+gDy(n,a))/GH*100).toFixed(2)+'%;width:'+(g.box[2]/GW*100).toFixed(2)+'%;transform-origin:'+((g.anc[0]-g.box[0])/g.box[2]*100).toFixed(1)+'% '+((g.anc[1]-g.box[1])/g.box[3]*100).toFixed(1)+'%;transform:scale('+f.toFixed(3)+')">'}).join('')+'</div></div>'}).join('');
+        return '<img class="gp" data-p="'+PIX[n]+'" data-img="hg_'+n+'" alt="" draggable="false" style="left:'+(g.box[0]/GW*100).toFixed(2)+'%;top:'+((g.box[1]+gDy(n,a))/GH*100).toFixed(2)+'%;width:'+(g.box[2]/GW*100).toFixed(2)+'%;transform-origin:'+((g.anc[0]-g.box[0])/g.box[2]*100).toFixed(1)+'% '+((g.anc[1]-g.box[1])/g.box[3]*100).toFixed(1)+'%;transform:scale('+f.toFixed(3)+')">'}).join('')+'</div></div>'}).join('');
   applyImgs(car);
   function carCenter(smooth){var b=car.querySelector('.hstall.on');if(!b||!car.clientWidth)return;
     car.scrollTo({left:b.offsetLeft-(car.clientWidth-b.offsetWidth)/2,behavior:smooth&&!RM?'smooth':'auto'})}
@@ -1903,13 +2046,15 @@ applyImgs();
       sl.classList.toggle('on',on);sl.classList.toggle('pv',a<ai);sl.classList.toggle('nx',a>ai);
       fam.forEach(function(p){if(!kid&&p.a===a)kid=p});
       var nm=on?c.name:(kid?(kid.n||'Player'):null);
-      sl.querySelector('.plate').textContent=on?(nm?nm.toUpperCase().slice(0,10)+' · AGE '+c.a:'AGE '+c.a):(nm?nm.toUpperCase().slice(0,6)+' · '+a:'AGE '+a);
+      sl.querySelector('.plate').textContent='AGE '+(on?c.a:a);
       if(on)act=sl;
       $$('.gp',sl).forEach(function(g){var p=PIECES[+g.dataset.p],x=on?st.s[p.k]:null;
         g.classList.toggle('inbag',!!x&&kbIn(x));g.classList.toggle('keep',!!x&&x.o==='keep')})});
     if(!act)return;
     var hin=act.querySelector('.hs-in'),dots=$('#hsDots'),bk=$('#hsBack');
-    if(dots.parentNode!==hin){hin.appendChild(bk);hin.appendChild(dots)}
+    if(dots.parentNode!==hin){hin.appendChild(dots)}
+    $('#carDots').innerHTML=Object.keys(HT).map(function(a){return '<button role="tab" data-cd="'+a+'" aria-selected="'+(+a===ai)+'" aria-label="Age '+a+'"></button>'}).join('');
+    $('#carInfo').textContent='Age '+c.a+' \u00B7 about '+fmtHt(HT[ai])+' \u00B7 '+sizeFor(HT[ai])[0];
     dots.innerHTML=PIECES.map(function(p,i){var x=st.s[p.k],s2=kbStat(p,x),d=carDot(p,ai);
       return '<button class="hd '+s2.c+'" data-ke="'+i+'" style="left:'+d[0]+'%;top:'+d[1]+'%" aria-label="'+p.n+', '+s2.l+'. Tap to change."><i></i></button>'}).join('');
     if(ai!==carAge){var first=!carAge;carAge=ai;if(!carLock)carCenter(!first)}
@@ -1921,30 +2066,55 @@ applyImgs();
     $$('.hstall',car).forEach(function(sl){var d=Math.abs(sl.offsetLeft+sl.offsetWidth/2-mid);if(d<bd){bd=d;best=sl}});
     if(best&&+best.dataset.age!==carAge){carLock=true;var h=stallsEl.querySelector('.stall[data-age="'+best.dataset.age+'"]');if(h)h.click();carLock=false}
   },120)},{passive:true});
-  car.addEventListener('click',function(e){var sl=e.target.closest('.hstall');if(!sl||sl.classList.contains('on'))return;
-    e.stopPropagation();var h=stallsEl.querySelector('.stall[data-age="'+sl.dataset.age+'"]');if(h)h.click()});
+  var ALPHA={};
+  function alphaAt(img,u,v){var k=img.getAttribute('data-img'),a=ALPHA[k];
+    if(!a){try{var cv=document.createElement('canvas'),w=72,h=Math.max(1,Math.round(72*img.naturalHeight/Math.max(1,img.naturalWidth)));cv.width=w;cv.height=h;var cx=cv.getContext('2d');cx.drawImage(img,0,0,w,h);a=ALPHA[k]={w:w,h:h,d:cx.getImageData(0,0,w,h).data}}catch(err){return 255}}
+    var x=Math.min(a.w-1,Math.max(0,Math.floor(u*a.w))),y=Math.min(a.h-1,Math.max(0,Math.floor(v*a.h)));return a.d[(y*a.w+x)*4+3]}
+  function pieceAt(sl,cx,cy){var gs=$$('.gp',sl),soft=-1;
+    for(var j=gs.length-1;j>=0;j--){var g=gs[j];if(g.classList.contains('inbag'))continue;var r=g.getBoundingClientRect();
+      if(cx<r.left||cx>r.right||cy<r.top||cy>r.bottom)continue;var al=alphaAt(g,(cx-r.left)/r.width,(cy-r.top)/r.height);
+      if(al>170)return +g.dataset.p;if(al>36&&soft<0)soft=+g.dataset.p}
+    return soft}
+  car.addEventListener('click',function(e){var sl=e.target.closest('.hstall');if(!sl)return;
+    if(!sl.classList.contains('on')){e.stopPropagation();var h=stallsEl.querySelector('.stall[data-age="'+sl.dataset.age+'"]');if(h)h.click();return}
+    if(e.target.closest('.hd')||!e.target.closest('.hs-in'))return;
+    e.stopPropagation();var i=pieceAt(sl,e.clientX,e.clientY);if(i>=0){kbOpen=i;kbD=null;kbSheet()}});
+  $('#carDots').addEventListener('click',function(e){var b=e.target.closest('[data-cd]');if(!b)return;var h=stallsEl.querySelector('.stall[data-age="'+b.dataset.cd+'"]');if(h)h.click()});
+  $('#cbL').appendChild($('#stPrev'));$('#cbR').appendChild($('#stNext'));$('#cbL2').appendChild($('#hsBack'));
+  document.body.appendChild($('#kbsWrap'));
   if(window.ResizeObserver){var carW=0;new ResizeObserver(function(){var w=car.clientWidth;if(w&&w!==carW){carW=w;carCenter(false)}}).observe(car)}
   var toastT=0;
   function kbToast(html,ok){var t=$('#kbToast');t.innerHTML=(ok?'<img data-img="bag" alt="">':'')+'<span>'+html+'</span>';if(ok)applyImgs(t);else t.style.paddingLeft='14px';if(ok)t.style.paddingLeft='';
     t.classList.add('on');clearTimeout(toastT);toastT=setTimeout(function(){t.classList.remove('on')},2100)}
   function kbBump(){var b=$('#kbBag');b.classList.remove('bump');void b.offsetWidth;b.classList.add('bump')}
-  function kbFly(i,quiet){
-    var c=kbCtx(),P=PIECES[i],bag=$('#kbBag'),src=null,r=null;
-    if($('#kb').getAttribute('data-view')==='open'){src=car.querySelector('.hstall.on .gp[data-p="'+i+'"]');r=src&&src.getBoundingClientRect();
-      if(!r||!r.width||r.bottom<70||r.top>innerHeight-110){src=null}}
+  function kbSrc(i){
+    var src=null,r=null,sh=$('#kbs'),lim=(!$('#kbsWrap').hidden&&sh)?sh.getBoundingClientRect().top:innerHeight-110;
+    if($('#kb').getAttribute('data-view')==='open'&&kbStep==='build'){src=car.querySelector('.hstall.on .gp[data-p="'+i+'"]');r=src&&src.getBoundingClientRect();
+      if(!r||!r.width||r.bottom<70||r.top+r.height*.4>lim){src=null}}
+    if(!src){src=$('#kcImg');r=src&&src.getBoundingClientRect();if(!r||!r.width||$('#kbsWrap').hidden)src=null}
     if(!src){src=$('#kbGrid [data-kb="'+i+'"] img');r=src&&src.getBoundingClientRect()}
+    if(!src||!r||!r.width)return null;
+    return {src:src.currentSrc||src.src,r:r,css:src.classList.contains('gp')?'filter:'+getComputedStyle(src).filter+';':'border-radius:12px;object-fit:cover;'};
+  }
+  function kbGhost(info,t,delay,op,done){
+    var r=info.r,g=document.createElement('img');g.src=info.src;g.alt='';g.className='kbfly';
+    g.style.cssText='left:'+r.left+'px;top:'+r.top+'px;width:'+r.width+'px;height:'+r.height+'px;opacity:0;'+info.css;document.body.appendChild(g);
+    var dx=t.left+t.width*.62-(r.left+r.width/2),dy=t.top+t.height/2-(r.top+r.height/2),sc=Math.max(.12,Math.min(.6,Math.max(34,t.height*.7)/Math.max(r.width,r.height))),m=sc+(1-sc)*.55,lift=Math.min(54,Math.max(22,Math.abs(dy)*.22));
+    var an=g.animate([{transform:'translate(0,0) scale(1) rotate(0deg)',opacity:op},
+      {transform:'translate('+(dx*.1)+'px,'+(-lift)+'px) scale(1.08) rotate(-8deg)',opacity:op,offset:.24},
+      {transform:'translate('+(dx*.62)+'px,'+(dy*.36-lift)+'px) scale('+m+') rotate(10deg)',opacity:op,offset:.64},
+      {transform:'translate('+dx+'px,'+dy+'px) scale('+sc+') rotate(0deg)',opacity:op*.15}],{duration:840,delay:delay,easing:'cubic-bezier(.45,.05,.3,1)',fill:'both'});
+    an.onfinish=function(){g.remove();if(done)done()};
+  }
+  function kbFlyTo(info,t,done){
+    if(RM||!info||!t||!document.body.animate){if(done)done();return}
+    kbGhost(info,t,150,.2);kbGhost(info,t,75,.42);kbGhost(info,t,0,1,done);
+  }
+  function kbFly(i,quiet){
+    var c=kbCtx(),P=PIECES[i],bag=$('#kbBag'),info=kbSrc(i);
     if(!quiet)kbToast('<b>'+P.n+'</b> added to '+(c.name?esc(c.name)+'’s':'the')+' bag',1);
-    if(RM||!src||!r||!r.width||!src.animate||!bag.offsetWidth){kbBump();return}
-    var t=bag.getBoundingClientRect(),g=document.createElement('img');
-    g.src=src.currentSrc||src.src;g.alt='';g.className='kbfly';
-    g.style.cssText='left:'+r.left+'px;top:'+r.top+'px;width:'+r.width+'px;height:'+r.height+'px;'+(src.classList.contains('gp')?'filter:'+getComputedStyle(src).filter+';':'border-radius:12px;object-fit:cover;');
-    document.body.appendChild(g);
-    var dx=t.left+t.width/2-(r.left+r.width/2),dy=t.top+t.height/2-(r.top+r.height/2),sc=Math.max(.1,Math.min(.5,38/Math.max(r.width,r.height))),m=sc+(1-sc)*.5;
-    var an=g.animate([{transform:'translate(0,0) scale(1) rotate(0deg)',opacity:1},
-      {transform:'translate(0,-16px) scale(1.09) rotate(-5deg)',opacity:1,offset:.2},
-      {transform:'translate('+(dx*.5)+'px,'+(dy*.42-34)+'px) scale('+m+') rotate(7deg)',opacity:1,offset:.6},
-      {transform:'translate('+dx+'px,'+dy+'px) scale('+sc+') rotate(0deg)',opacity:.25}],{duration:780,easing:'cubic-bezier(.45,.05,.3,1)'});
-    an.onfinish=function(){g.remove();kbBump()};
+    if(RM||!info||!bag.offsetWidth){kbBump();return}
+    kbFlyTo(info,bag.getBoundingClientRect(),kbBump);
   }
   function kbMoved(i,was,now,delay){
     var inWas=typeof was==='number',inNow=typeof now==='number';
