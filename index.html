@@ -587,6 +587,84 @@ img[data-img]{display:block;max-width:100%}
   .hero-art{height:150px}
   .home-sub{font-size:14.5px}
 }
+
+/* ===== v14: locker room ===== */
+#s-kits .sub-h{margin-bottom:2px}
+.bench{display:flex;flex-wrap:wrap;align-items:center;gap:6px 12px;padding:6px 8px;border-radius:20px;background:var(--glass);border:1px solid var(--glass-edge);box-shadow:0 0 0 1px var(--line);margin-bottom:10px}
+.bench .kidrow{flex:1 1 220px;gap:6px;padding:2px;min-width:0}
+.bench .kid{width:auto;display:flex;align-items:center;gap:8px;padding:4px 12px 4px 4px;border-radius:999px;background:var(--surface);box-shadow:0 0 0 1px var(--line);justify-items:initial}
+.bench .kid .av{width:32px;height:32px;font-size:19px;box-shadow:inset 0 1px 0 rgba(255,255,255,.4)}
+.bench .kid .kn{display:block;text-align:left;line-height:1.1}
+.bench .kid b{display:block;font-size:13px;max-width:84px}
+.bench .kid em{display:block;font-size:10.5px}
+.bench .kid[aria-selected=true]{background:var(--surface);box-shadow:0 0 0 2px var(--blue),0 8px 16px -10px var(--glow);transform:none}
+.bench .kid.add{background:transparent;box-shadow:none;padding-right:8px}
+.bench .kid.add .av{width:30px;height:30px;font-size:20px;border-width:1.5px}
+.bench .kided{margin:0;flex:none}
+.bench .ked{padding:0;background:none;border:0;box-shadow:none;gap:6px;flex-wrap:nowrap}
+.bench .ked input[type=text]{width:104px;padding:7px 10px;font-size:14px}
+.bench .stp span{min-width:48px;font-size:12.5px}
+.bench .stp button{width:30px;height:30px}
+.lroom{position:relative;border-radius:24px;overflow:hidden;margin-bottom:14px;background:linear-gradient(180deg,#F3F7FD 0,#E4EDF9 58%,#D5E1F2 100%);box-shadow:0 0 0 1px var(--line),0 26px 44px -34px rgba(10,24,48,.55)}
+.lroom::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(90deg,transparent 0 46px,rgba(10,24,48,.045) 46px 47px);pointer-events:none}
+.lroom-h{position:relative;display:flex;align-items:baseline;gap:2px 10px;flex-wrap:wrap;padding:10px 96px 0 16px;min-height:40px}
+.lroom-h b{font-family:var(--disp);font-weight:800;font-size:19px;letter-spacing:.06em;text-transform:uppercase}
+.lroom-h span{font-size:12.5px;color:var(--muted);font-weight:600}
+.lroom .stalls{padding:16px 10px 0;margin:0;gap:0;align-items:flex-end;-webkit-mask-image:linear-gradient(90deg,transparent,#000 18px,#000 calc(100% - 18px),transparent);mask-image:linear-gradient(90deg,transparent,#000 18px,#000 calc(100% - 18px),transparent)}
+.lroom .stallwrap{position:static}
+.lroom .sarr{top:7px;margin-top:0;width:32px;height:32px;background:var(--surface)}.lroom .sarr svg{width:16px;height:16px}.lroom .sarr.r{right:10px}.lroom .sarr.l{left:auto;right:48px}
+.lroom .sarr:disabled{opacity:.35}
+.lfloor{position:relative;height:16px;background:linear-gradient(180deg,#B88A57 0,#B88A57 4px,#0A1830 4px,#16294a 100%)}
+.lroom .stall{width:138px;height:250px;padding:0;gap:0;border-radius:10px 10px 0 0;background:linear-gradient(180deg,#11264a 0,#0A1830 70%);border:5px solid #C89C6A;border-bottom:0;border-left-color:#D6AE7E;border-right-color:#B88A57;box-shadow:inset 0 22px 26px -18px rgba(0,0,0,.6),inset 6px 0 12px -8px rgba(0,0,0,.5),inset -6px 0 12px -8px rgba(0,0,0,.5);margin-right:-5px;transition:transform .35s cubic-bezier(.3,1.3,.4,1),filter .3s;filter:saturate(.85) brightness(.93);overflow:hidden}
+.lroom .stall:last-child{margin-right:0}
+.lroom .stall::before{content:"";display:block;position:absolute;left:0;right:0;top:0;width:auto;height:26px;transform:none;border-radius:0;background:linear-gradient(180deg,#D6AE7E,#B88A57);opacity:1;box-shadow:0 2px 0 rgba(0,0,0,.25)}
+.lroom .stall::after{content:"";position:absolute;left:8%;right:8%;top:26px;height:64%;background:radial-gradient(60% 100% at 50% 0,rgba(140,190,255,.38),transparent 70%);opacity:0;transition:opacity .35s;pointer-events:none}
+.lroom .stall .plate{position:relative;z-index:1;margin-top:4px;font-size:12.5px;letter-spacing:.08em;padding:1px 8px;border-radius:5px;line-height:1.35;max-width:92%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;box-shadow:0 1px 0 rgba(0,0,0,.25)}
+.lroom .stall.mine .plate{background:var(--blue);color:#fff}
+.lroom .stall .cub{display:block;position:relative;z-index:1;width:100%;flex:1;min-height:0;padding:6px 8px 0}
+.lroom .stall .cub svg{width:100%;height:100%}
+.stall .wd{fill:#C89C6A}
+.stall .hl{fill:#0A1222;stroke:#3a557f;stroke-width:1.2}
+.stall .hs{fill:none;stroke:#7fa6dc;stroke-width:1.6;stroke-linecap:round;opacity:.7}
+.stall .cg{fill:none;stroke:#b9c9de;stroke-width:1.1}
+.stall .hk{fill:none;stroke:#b9c9de;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.stall .jr{fill:#F2F7FF;stroke:#0A1222;stroke-width:1;stroke-linejoin:round}
+.stall .js{fill:none;stroke:#2A78FF;stroke-width:5}
+.stall .jn{font:800 30px var(--disp);fill:#0A1830}
+.stall .sk path:nth-child(odd){fill:#0A1222;stroke:#3a557f;stroke-width:1}
+.stall .sk path:nth-child(even){fill:none;stroke:#dbe7f6;stroke-width:1.6;stroke-linecap:round}
+.lroom .stall .st-t{position:relative;z-index:1;display:block;width:100%;padding:6px 6px 9px;background:linear-gradient(180deg,rgba(10,24,48,.0),rgba(10,24,48,.55));text-align:center}
+.lroom .stall b{display:block;font-size:20px}
+.lroom .stall em{display:block;font-size:11px;margin-top:1px}
+.lroom .stall strong{display:block;font-size:11.5px;margin-top:2px}
+.lroom .stall:hover{transform:translateY(-3px);filter:none}
+.lroom .stall[aria-selected=true]{transform:translateY(-10px) scale(1.04);z-index:2;filter:none;background:linear-gradient(180deg,#1b4487 0,#0e2347 75%);box-shadow:inset 0 22px 26px -18px rgba(0,0,0,.35),0 0 0 3px var(--blue-lite),0 18px 30px -12px var(--glow)}
+.lroom .stall[aria-selected=true]:hover{transform:translateY(-10px) scale(1.04)}
+.lroom .stall[aria-selected=true]::after{opacity:1}
+.lroom .stall[aria-selected=true] .jr{fill:#fff}
+.kfor{font-weight:800;font-size:12.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--blue);margin-bottom:2px}
+#shopH{margin-top:18px}
+#s-kits .lkq{height:46px;margin-bottom:8px}
+@media (max-width:820px){
+  #s-kits{padding-top:4px}
+  #s-kits .sub-h{gap:10px;margin-bottom:0}
+  #s-kits .sub-h h2{font-size:clamp(24px,7vw,30px)}
+  #s-kits .back{width:38px;height:38px;border-radius:13px}
+  .bench{margin-bottom:8px;padding:5px 6px}
+  .bench .kided{flex:1 1 100%;min-width:0}
+  .bench .ked{width:100%}
+  .bench .ked input[type=text]{flex:1 1 0;width:0;min-width:0}
+  .bench .ked .stp,.bench .ked .x{flex:none}
+  .lroom{margin-bottom:10px;border-radius:20px}
+  .lroom-h{padding:8px 92px 0 12px}
+  .lroom-h b{font-size:17px}
+  .lroom .stalls{padding-top:14px}
+  .lroom .stall{width:124px;height:232px}
+  .lroom .stall b{font-size:18px}
+  #s-kits .kits-grid .kitout{order:-1}
+  #s-kits .kitout .size{font-size:36px}
+  #s-kits .card{padding:16px}
+}
 </style>
 </head>
 <body>
@@ -626,6 +704,7 @@ img[data-img]{display:block;max-width:100%}
     <symbol id="i-family" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.500" fill="currentColor" opacity=".3"/><circle cx="9" cy="8" r="3.500" fill="none" stroke="currentColor" stroke-width="2"/><path d="M2.500 20c.6-3.600 3.100-5.500 6.500-5.500s5.900 1.900 6.500 5.500M16 5a3.200 3.200 0 0 1 0 6.200M18 14.800c1.900.6 3.100 2.300 3.500 5.200" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
     <symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 20.500s-8-4.700-8-10.800A4.700 4.700 0 0 1 12 7a4.700 4.700 0 0 1 8 2.700c0 6.100-8 10.800-8 10.800Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></symbol>
     <symbol id="i-learn" viewBox="0 0 24 24"><path d="M3 7.500 12 4l9 3.500-9 3.500-9-3.500Z" fill="currentColor" opacity=".3"/><path d="M3 7.500 12 4l9 3.500-9 3.500-9-3.500ZM7 10v5c0 1.500 2.300 3 5 3s5-1.500 5-3v-5M21 8v6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-next" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></symbol>
     <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12.500 4.500 4.500L19 7.500" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></symbol>
   </defs>
 </svg>
@@ -824,9 +903,9 @@ img[data-img]{display:block;max-width:100%}
   <!-- SUB: LOCKER ROOM -->
   <section class="sub" id="s-kits" aria-label="Your locker room">
     <div class="sub-h"><button class="back" data-close aria-label="Close locker room"><svg><use href="#i-back"/></svg></button><h2>Your locker room</h2></div>
-    <div class="sub-b" style="display:block"><div style="max-width:1040px;margin:0 auto"><div class="kidrow" id="kidRow" role="tablist" aria-label="Players"></div><div class="kided" id="kidEd"></div><label class="lkq"><svg><use href="#i-ask"/></svg><input id="lkq" type="search" placeholder="Search gear, sizes or an age" aria-label="Search the locker room" autocomplete="off"></label>
-      <p class="vs">Pick your player. Walk the row. Everything they need is in here.</p>
-      <div class="stallwrap"><button class="sarr l" id="stPrev" aria-label="Previous stall"><svg><use href="#i-next"/></svg></button><div class="stalls" id="stalls" role="listbox" aria-label="Locker stalls by age"></div><button class="sarr r" id="stNext" aria-label="Next stall"><svg><use href="#i-next"/></svg></button></div>
+    <div class="sub-b" style="display:block"><div style="max-width:1040px;margin:0 auto"><div class="bench"><div class="kidrow" id="kidRow" role="tablist" aria-label="Players"></div><div class="kided" id="kidEd"></div></div>
+      <div class="lroom"><div class="lroom-h"><b>Pick a stall</b><span id="lroomTx">Tap a stall to build that kit.</span></div>
+      <div class="stallwrap"><button class="sarr l" id="stPrev" aria-label="Previous stall"><svg><use href="#i-next"/></svg></button><div class="stalls" id="stalls" role="listbox" aria-label="Locker stalls by age"></div><button class="sarr r" id="stNext" aria-label="Next stall"><svg><use href="#i-next"/></svg></button></div><div class="lfloor" aria-hidden="true"></div></div>
       <div class="card kits-grid">
         <div>
           <div class="fld"><label for="age">Age <b id="ageV">7</b></label><input id="age" type="range" min="3" max="14" value="7"></div>
@@ -834,6 +913,7 @@ img[data-img]{display:block;max-width:100%}
           <div class="fld" style="margin-bottom:0"><label for="zip">ZIP code</label><input id="zip" type="text" inputmode="numeric" maxlength="5" placeholder="63139" autocomplete="postal-code"></div>
         </div>
         <div class="kitout" aria-live="polite">
+          <div class="kfor" id="kFor">Starter kit</div>
           <div class="row"><div class="size" id="kSize">Youth M</div><div class="net" id="kNet">$99 after return</div></div>
           <div class="chips" id="kChips"></div>
           <div class="avail ok" id="kAvail">Enter your ZIP to check pickup.</div>
@@ -841,7 +921,7 @@ img[data-img]{display:block;max-width:100%}
           <p class="tiny" style="margin-top:10px">Sample prices. Final return values are set after the St. Louis pilot.</p>
         </div>
       </div>
-    <h3 class="lh" id="shopH">Gear for every age</h3><div class="shop-bar"><div class="fchips" id="fchips" role="group" aria-label="Filter gear"></div></div><div class="shop-grid" id="shopGrid"></div><p class="tiny" style="margin-top:14px">Sample listings and prices. Every piece is inspected and cleaned. Helmets are sold new only.</p></div></div>
+    <h3 class="lh" id="shopH">Gear for every age</h3><label class="lkq"><svg><use href="#i-ask"/></svg><input id="lkq" type="search" placeholder="Search gear, sizes or an age" aria-label="Search the locker room" autocomplete="off"></label><div class="shop-bar"><div class="fchips" id="fchips" role="group" aria-label="Filter gear"></div></div><div class="shop-grid" id="shopGrid"></div><p class="tiny" style="margin-top:14px">Sample listings and prices. Every piece is inspected and cleaned. Helmets are sold new only.</p></div></div>
   </section>
 
   <!-- SUB: CLUBS -->
@@ -1055,7 +1135,17 @@ applyImgs();
   var stallsEl=$('#stalls');
   stallsEl.innerHTML=Object.keys(HT).map(function(a,i){
     var sz=sizeFor(HT[a]), sp=SP[i%SP.length];
-    return '<button class="stall" role="option" data-age="'+a+'" aria-selected="false"><span class="plate">AGE '+a+'</span><span class="win"><img data-img="'+sp[0]+'" data-fx="'+sp[1]+'" alt=""></span><span class="vent"><i></i><i></i><i></i></span><b>'+sz[0]+'</b><em>Skates '+sz[1]+'</em><strong>$'+(KIT_PRICE-CREDIT)+' after return</strong></button>'}).join('');
+    return '<button class="stall" role="option" data-age="'+a+'" aria-selected="false" aria-label="Age '+a+' stall, '+sz[0]+' kit"><span class="plate">AGE '+a+'</span><span class="cub">'+
+      '<svg viewBox="0 0 120 132" aria-hidden="true">'+
+      '<rect class="wd" x="0" y="34" width="120" height="5" rx="1.5"/>'+
+      '<path class="hl" d="M41 34v-9a19 17 0 0 1 38 0v9z"/><path class="hs" d="M47 20a14 12 0 0 1 14-9" /><path class="cg" d="M62 22h17v12H62zM68 22v12M74 22v12M62 28h17"/>'+
+      '<path class="hk" d="M60 39v6M52 50l8-5 8 5"/>'+
+      '<path class="jr" d="M46 49 37 52 20 67l9 11 9-8v38h44V70l9 8 9-11-17-15-9-3q-14 8-28 0Z"/>'+
+      '<path class="js" d="M38 99h44M22.500 69.500l8 9.500M97.500 69.500l-8 9.500"/>'+
+      '<text class="jn" x="60" y="92" text-anchor="middle">'+a+'</text>'+
+      '<rect class="wd" x="0" y="112" width="120" height="5" rx="1.5"/>'+
+      '<g class="sk"><path d="M30 119h9v5h7q5 0 5 5H30z"/><path d="M29 131.500h23"/><path d="M68 119h9v5h7q5 0 5 5H68z"/><path d="M67 131.500h23"/></g>'+
+      '</svg></span><span class="st-t"><b>'+sz[0]+'</b><em>Skates '+sz[1]+'</em><strong>$'+(KIT_PRICE-CREDIT)+' after return</strong></span></button>'}).join('');
   applyImgs(stallsEl);
   function syncStalls(scroll){
     var a=+age.value; $('#stPrev').disabled=a<=3; $('#stNext').disabled=a>=12;
@@ -1065,6 +1155,7 @@ applyImgs();
   function kit(){
     var a=+age.value,h=+ht.value; $('#ageV').textContent=a; $('#htV').textContent=fmtHt(h);
     var sz=sizeFor(h), size=sz[0], skate=sz[1];
+    var kk=(typeof fam!=='undefined'&&fam&&fam[selKid]); $('#kFor').textContent=kk?((kk.n||'Player')+"\u2019s kit"):('Age '+a+' kit');
     $('#kSize').textContent=size;
     $('#kNet').textContent='$'+(KIT_PRICE-CREDIT)+' after return';
     $('#kChips').innerHTML=['Helmet','Gloves','Shin guards','Elbow pads','Pants','Skates '+skate].map(function(x){return '<span>'+x+'</span>'}).join('');
@@ -1112,10 +1203,15 @@ applyImgs();
   function kidHt(a){return HT[a]||Math.min(68,58+(a-12)*2)}
   function applyKid(){var k=fam[selKid];if(!k)return;age.value=k.a;ht.value=kidHt(k.a);kit();syncStalls(true)}
   function renderKids(rowOnly){
-    $('#kidRow').innerHTML=fam.map(function(p,i){return '<button class="kid" role="tab" data-i="'+i+'" aria-selected="'+(i===selKid)+'"><span class="av" style="background:'+PAL[i%PAL.length]+'">'+esc((p.n||'?').charAt(0).toUpperCase())+'</span><b>'+esc(p.n||'Player')+'</b><em>Age '+p.a+'</em></button>'}).join('')+(fam.length<6?'<button class="kid add" data-add aria-label="Add a player"><span class="av">+</span><b>Add</b><em>player</em></button>':'');
-    if(rowOnly)return;
+    $('#kidRow').innerHTML=fam.map(function(p,i){return '<button class="kid" role="tab" data-i="'+i+'" aria-selected="'+(i===selKid)+'"><span class="av" style="background:'+PAL[i%PAL.length]+'">'+esc((p.n||'?').charAt(0).toUpperCase())+'</span><span class="kn"><b>'+esc(p.n||'Player')+'</b><em>Age '+p.a+'</em></span></button>'}).join('')+(fam.length<6?'<button class="kid add" data-add aria-label="Add a player"><span class="av">+</span><span class="kn"><b>Add</b></span></button>':'');
     var k=fam[selKid];
-    $('#kidEd').innerHTML=k?'<div class="ked"><input type="text" value="'+esc(k.n)+'" maxlength="16" aria-label="Player name"><div class="fit">'+fitTxt(k.a)+'</div><div class="stp"><button data-s="-1" aria-label="Younger">\u2212</button><span>'+k.a+'</span><button data-s="1" aria-label="Older">+</button></div><button class="x" data-rm aria-label="Remove player">\u00D7</button></div>':'<p class="tiny" style="margin:0 0 8px 4px">Browsing by age. Tap a player to see their sizes, or add one.</p>';
+    $$('.stall',stallsEl).forEach(function(b){var a=+b.dataset.age, who=fam.filter(function(p){return p.a===a}), pl=$('.plate',b);
+      b.classList.toggle('mine',who.length>0);
+      pl.textContent=who.length?((who[0].n||'Player').toUpperCase().slice(0,9)+(who.length>1?' +'+(who.length-1):'')+' \u00B7 '+a):('AGE '+a)});
+    $('#lroomTx').textContent=k?((k.n||'Player')+'\u2019s stall \u00B7 '+fitTxt(k.a)):'Browsing by age. Tap a stall to build that kit.';
+    kit();
+    if(rowOnly)return;
+    $('#kidEd').innerHTML=k?'<div class="ked"><input type="text" value="'+esc(k.n)+'" maxlength="16" aria-label="Player name"><div class="stp"><button data-s="-1" aria-label="Younger">\u2212</button><span>Age '+k.a+'</span><button data-s="1" aria-label="Older">+</button></div><button class="x" data-rm aria-label="Remove player">\u00D7</button></div>':'';
   }
   var ITEMS=[
     {t:'Youth skates',s:'size 1',p:42,c:'Skates',g:'Grade A',a:[8,9],img:'skates',fx:'62% 88% 1.9'},
@@ -1175,7 +1271,8 @@ applyImgs();
   });
   function clearKid(){selKid=-1;renderKids();renderShop()}
   age.addEventListener('input',clearKid);
-  stallsEl.addEventListener('click',clearKid);
+  stallsEl.addEventListener('click',function(e){var b=e.target.closest('.stall');if(!b)return;var a=+b.dataset.age,ix=-1;fam.forEach(function(p,i){if(ix<0&&p.a===a)ix=i});
+    if(ix>=0){selKid=ix;renderKids();renderShop();renderFam()}else clearKid()});
   $('#stPrev').addEventListener('click',clearKid);$('#stNext').addEventListener('click',clearKid);
   renderKids();applyKid();renderShop();renderFam();
 
