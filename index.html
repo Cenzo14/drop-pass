@@ -9,14 +9,15 @@
 <meta property="og:title" content="Drop Pass">
 <meta property="og:description" content="A sized starter kit with its return value printed up front. Outgrow it, pass it back, and it goes to the next family.">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://cenzo14.github.io/drop-pass/">
+<meta property="og:url" content="https://droppasshockey.com/">
+<link rel="canonical" href="https://droppasshockey.com/">
 <meta property="og:site_name" content="Drop Pass">
-<meta property="og:image" content="https://cenzo14.github.io/drop-pass/share.jpg">
+<meta property="og:image" content="https://droppasshockey.com/share.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Two hockey parents pass a gear bag at the rink boards">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://cenzo14.github.io/drop-pass/share.jpg">
+<meta name="twitter:image" content="https://droppasshockey.com/share.jpg">
 <meta name="description" content="Start hockey with a sized kit and a published return value. Outgrow it, pass it back, and it goes to the next family.">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='32' fill='%230A1830'/%3E%3Cellipse cx='32' cy='36' rx='15' ry='7' fill='%232A78FF'/%3E%3Cpath d='M44 24C40 14 26 14 21 22' fill='none' stroke='white' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Figtree:wght@400;500;600;700&display=swap">
@@ -1269,6 +1270,45 @@ html .offhome #rink{opacity:.22}
   #v-home .cta .btn.gl{background:rgba(255,255,255,.7);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
   #v-home .home-sub{color:#44546E}
 }
+
+/* ===== v22: tucked signal, launch prices, hold request, smoother locker ===== */
+.top .sig{display:none;align-items:center;gap:6px;height:30px;padding:0 10px 0 9px;border-radius:999px;background:rgba(255,255,255,.78);box-shadow:0 0 0 1px rgba(10,24,48,.08),0 6px 14px -8px rgba(10,24,48,.35);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);font:700 11.5px/1 var(--body);color:var(--navy);white-space:nowrap}
+.top .sig b{font-weight:800}
+.top .sig .pulse{width:8px;height:8px;flex:none}
+body:not(.subon):has(#v-home.on) .top .sig{display:inline-flex}
+@media (min-width:821px){body:not(.subon):has(#v-home.on) .top .sig{display:none}}
+@media (max-width:820px){.top .sig b{display:none}.top .sig{height:28px;padding:0 9px 0 8px;font-size:11px}}
+.top .brand,.top .brand span{white-space:nowrap;min-width:0}
+@media (max-width:372px){.top .sig{font-size:0;gap:0;width:28px;padding:0;justify-content:center}}
+@media (max-width:820px){#v-home .hero{justify-content:flex-end;padding-bottom:6px}}
+#v-home .status:has(.rinkchip:empty){display:none}
+#car .hstall{--k:0;margin-top:18px;transform:translateY(calc(-18px*var(--k))) scale(calc(.9 + .1*var(--k)));filter:none;transition:none}
+#car .hstall.on{--k:1;margin-top:18px;filter:none}
+#car .hstall::after{content:"";position:absolute;inset:0;background:#000;opacity:calc(.2 - .2*var(--k));pointer-events:none;z-index:9;border-radius:inherit}
+#car .hstall{contain:layout paint;will-change:transform}
+#car .hstall::after{will-change:opacity}
+.hold-w{position:fixed;inset:0;z-index:70;display:flex;align-items:flex-end;justify-content:center;background:rgba(10,24,48,.45);animation:fi .2s}
+.hold-w[hidden]{display:none}
+.hold{position:relative;width:min(100%,520px);max-height:88%;overflow:auto;background:var(--surface);border-radius:24px 24px 0 0;padding:20px 18px calc(18px + env(safe-area-inset-bottom,0px));box-shadow:0 -20px 50px -20px rgba(0,0,0,.6);animation:kup .3s cubic-bezier(.3,.9,.3,1)}
+.hold h3{font:800 22px/1.15 var(--body);color:var(--navy);margin:0 40px 6px 0}
+.hold .hq-s{font-size:13.5px;color:var(--muted);margin:0 0 12px}
+.hold .hq-x{position:absolute;top:14px;right:14px;width:36px;height:36px;border-radius:50%;background:var(--surface2);font-size:22px;line-height:1;color:var(--navy)}
+.hold .hq-l{list-style:none;margin:0 0 10px;padding:0;border-top:1px solid var(--line)}
+.hold .hq-l li{display:grid;grid-template-columns:1fr auto;gap:0 10px;padding:8px 0;border-bottom:1px solid var(--line)}
+.hold .hq-l b{font-size:14px;color:var(--navy)}
+.hold .hq-l span{grid-column:1;font-size:12px;color:var(--muted)}
+.hold .hq-l em{grid-column:2;grid-row:1/3;align-self:center;font:800 15px var(--body);font-style:normal;color:var(--navy)}
+.hold .hq-t{display:flex;justify-content:space-between;align-items:baseline;margin:4px 0 2px}
+.hold .hq-t span{font-size:13px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.hold .hq-t b{font:800 26px var(--disp);color:var(--navy)}
+.hold .hq-c{font-size:12.5px;color:#0F7A4F;font-weight:700;margin:0 0 14px}
+.hold .btn{width:100%;justify-content:center}
+.hold .hq-link{display:block;margin:10px auto 0;font-size:13px;font-weight:700;color:var(--blue);text-decoration:underline;background:none}
+.hold .hq-tx{width:100%;min-height:150px;margin:0 0 12px;padding:10px;border-radius:12px;border:1px solid var(--line);font:500 13px/1.4 var(--body);color:var(--navy);background:var(--surface2)}
+.hold .hq-ok{text-align:center;padding:8px 0 16px}
+.hold .hq-ok i{display:block;width:52px;height:52px;margin:0 auto 10px;border-radius:50%;background:var(--green) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12l5 5 9-10'/%3E%3C/svg%3E") center/26px no-repeat}
+.hold .hq-ok h3{margin:0 0 6px}
+.hold .hq-ok p{font-size:14px;color:var(--muted);margin:0}
 </style>
 </head>
 <body>
@@ -1320,6 +1360,7 @@ html .offhome #rink{opacity:.22}
 <header class="top">
   <div class="brand"><button class="ha-badge" id="badge" aria-pressed="false" aria-label="Flip the logo between pass forward and trade-in"><span class="f"><img data-img="logoA" alt="Drop Pass logo"></span><span class="b"><img data-img="logoB" alt="Drop Pass trade-in logo"></span></button><span>DROP PASS</span></div>
   <div class="r">
+    <span class="sig" aria-label="Every kit is Drop Pass Checked"><i class="pulse"></i><b>Drop Pass </b>Checked</span>
     <button class="chip" id="rinkBtn" aria-label="Set home rink"><svg><use href="#i-pin"/></svg><span class="tx" id="rinkTx">Home rink</span></button>
   </div>
 </header>
@@ -1345,7 +1386,7 @@ html .offhome #rink{opacity:.22}
           <button class="path" data-tab="map"><span class="ico sm"><svg><use href="#i-pin"/></svg></span><span><b>Find a rink</b><em>Rinks near you</em></span></button>
           <button class="path" data-open="compare"><span class="ico sm"><svg><use href="#i-compare"/></svg></span><span><b>See the cost</b><em>Keep or pass back</em></span></button>
         </div>
-        <div class="status"><i class="pulse"></i><b class="chk">Drop Pass Checked</b>St. Louis first. Minnesota next.<span class="rinkchip" id="rinkNote"></span></div>
+        <div class="status"><span class="rinkchip" id="rinkNote"></span></div>
         <div class="rinkset" id="rinkSet"><input id="rinkIn" type="text" placeholder="Your home rink" aria-label="Home rink name" maxlength="40" style="letter-spacing:0"><button class="btn pri sm" id="rinkSave">Save</button></div>
       </div>
       <div class="hero-art" id="heroArt">
@@ -1388,7 +1429,7 @@ html .offhome #rink{opacity:.22}
         <button class="tile" data-open="clubs"><span class="ico"><svg><use href="#i-club"/></svg></span><span><b>For clubs</b><span class="d">Add one button. We do the rest.</span></span></button>
         <button class="tile" data-open="where"><span class="ico"><svg><use href="#i-pin"/></svg></span><span><b>Where</b><span class="d">St. Louis first, then the map.</span></span></button>
       </div>
-      <p class="legal">Drop Pass is a St. Louis pilot published by Anthony Steven DeCenzo, St. Louis, MO. Prices, credits and listings shown are samples for this prototype and are not final.</p>
+      <p class="legal">Drop Pass is a St. Louis pilot published by Anthony Steven DeCenzo, St. Louis, MO. Prices and credits are St. Louis launch prices. Listings are examples; stock and sizes are confirmed before pickup.</p>
     </div>
   </section>
 
@@ -1409,7 +1450,7 @@ html .offhome #rink{opacity:.22}
                 <button class="pbtn alt" data-go="pass">Pass back gear</button>
               </div>
               <div class="pane" id="p-kit">
-                <div class="pban"><img data-img="skates" alt="" data-fx="60% 75% 1.5"><span>Choose your kit</span></div><div class="s-h" style="display:none">Choose your kit</div><div class="s-s">Sample prices for the prototype.</div>
+                <div class="pban"><img data-img="skates" alt="" data-fx="60% 75% 1.5"><span>Choose your kit</span></div><div class="s-h" style="display:none">Choose your kit</div><div class="s-s">St. Louis launch price. Memberships open later.</div>
                 <button class="plan" data-plan="kit" aria-pressed="true"><div><b>Starter Kit</b><span>One time, sized to your player</span></div><div class="pr">$199</div></button>
                 <button class="plan" data-plan="plus" aria-pressed="false"><div><b>Locker Plus</b><span>Higher return credit, first pick of sizes</span></div><div class="pr">$7.99<small style="font:600 11px Figtree"> /mo</small></div></button>
                 <button class="plan" data-plan="fam" aria-pressed="false"><div><b>Family</b><span>Several players, shared credit</span></div><div class="pr">$14.99<small style="font:600 11px Figtree"> /mo</small></div></button>
@@ -1484,12 +1525,12 @@ html .offhome #rink{opacity:.22}
           <div>
             <div class="fld" style="margin-bottom:24px"><label for="sizes">Sizes your player outgrows <b id="szV" style="color:#8DB6FF">3</b></label><input id="sizes" type="range" min="1" max="5" value="3"></div>
             <div class="bars">
-              <div><div class="bar-l"><span>Keep every kit</span><span id="tA">$597</span></div><div class="bar a"><i id="bA"></i></div></div>
-              <div><div class="bar-l"><span>Pass each one back</span><span id="tB">$297</span></div><div class="bar b"><i id="bB"></i></div></div>
+              <div><div class="bar-l"><span>Keep every kit</span><span id="tA">$417</span></div><div class="bar a"><i id="bA"></i></div></div>
+              <div><div class="bar-l"><span>Pass each one back</span><span id="tB">$267</span></div><div class="bar b"><i id="bB"></i></div></div>
             </div>
-            <p class="tiny" style="margin-top:16px">Sample math: $199 kit, up to $100 credit on return within 12 months. Not final pricing.</p>
+            <p class="tiny" style="margin-top:16px">Launch math: $199 starter kit, $109 for each size-up, up to $50 credit each time a kit is passed back within 12 months.</p>
           </div>
-          <div class="save" aria-live="polite"><span id="sv">$300</span><small>stays in your pocket over <span id="sv2">3</span> sizes</small></div>
+          <div class="save" aria-live="polite"><span id="sv">$150</span><small>stays in your pocket over <span id="sv2">3</span> sizes</small></div>
         </div>
       </div>
     </div></div>
@@ -1544,7 +1585,7 @@ html .offhome #rink{opacity:.22}
         <button id="kitGo" hidden>Reserve in the app</button>
       </div>
       <p class="tiny" id="kbMath" style="margin:8px 2px 0"></p>
-    <h3 class="lh" id="shopH">Gear for every age</h3><label class="lkq"><svg><use href="#i-ask"/></svg><input id="lkq" type="search" placeholder="Search gear, sizes or an age" aria-label="Search the locker room" autocomplete="off"></label><div class="shop-bar"><div class="fchips" id="fchips" role="group" aria-label="Filter gear"></div></div><div class="shop-grid" id="shopGrid"></div><p class="tiny" style="margin-top:14px">Sample listings and prices. Every piece is inspected and cleaned. Helmets are sold new only.</p></div></div>
+    <h3 class="lh" id="shopH">Gear for every age</h3><label class="lkq"><svg><use href="#i-ask"/></svg><input id="lkq" type="search" placeholder="Search gear, sizes or an age" aria-label="Search the locker room" autocomplete="off"></label><div class="shop-bar"><div class="fchips" id="fchips" role="group" aria-label="Filter gear"></div></div><div class="shop-grid" id="shopGrid"></div><p class="tiny" style="margin-top:14px">Example listings at St. Louis launch prices. Every piece is checked and cleaned. Helmets and neck guards are sold new only.</p></div></div>
   </section>
 
   <!-- SUB: CLUBS -->
@@ -1606,7 +1647,7 @@ html .offhome #rink{opacity:.22}
 window.applyImgs=function(root){
   root=root||document;
   [].forEach.call(root.querySelectorAll('img[data-img]'),function(i){
-    var k=i.getAttribute('data-img'); if(IMG[k]&&i.getAttribute('src')!==IMG[k])i.src=IMG[k];
+    var k=i.getAttribute('data-img'); if(IMG[k]&&i._dpk!==k){i._dpk=k;if(i.getAttribute('src')!==IMG[k])i.src=IMG[k]}
     var f=i.getAttribute('data-fx'); if(f){var p=f.split(' ');i.style.objectPosition=p[0]+' '+p[1];i.style.transformOrigin=p[0]+' '+p[1];i.style.transform='scale('+p[2]+')'}
   });
   [].forEach.call(root.querySelectorAll('[data-bg]'),function(e){var k=e.getAttribute('data-bg');if(IMG[k])e.style.backgroundImage='url('+IMG[k]+')'});
@@ -1735,6 +1776,7 @@ applyImgs();
     function hit(hx,hy,c){turn();var e=el('circle',{cx:hx,cy:hy,r:6,fill:'none',stroke:c,'stroke-width':3,opacity:.7},hitG);hits.push({e:e,t:0})}
     function frame(ts){
       if(my!==runId)return;
+      if(document.body.classList.contains('subon')||document.hidden){last=null;requestAnimationFrame(frame);return}
       if(last===null)last=ts;
       var dt=Math.min(.05,(ts-last)/1000);last=ts;place();
       x+=vx*dt;y+=vy*dt;
@@ -1801,7 +1843,7 @@ applyImgs();
   $('#rinkIn').addEventListener('keydown',function(e){if(e.key==='Enter')$('#rinkSave').click()});
 
   /* ================= kit finder + locker stalls ================= */
-  var KIT_PRICE=199, CREDIT=100;
+  var KIT_PRICE=199, CREDIT=50, SIZEUP=109;
   var age=$('#age'),ht=$('#ht'),zip=$('#zip');
   var HT={3:38,4:41,5:43,6:45,7:48,8:50,9:52,10:54,11:56,12:58};
   function fmtHt(i){return Math.floor(i/12)+"'"+(i%12)+'"'}
@@ -1823,7 +1865,7 @@ applyImgs();
     var kk=(typeof fam!=='undefined'&&fam&&fam[selKid]); $('#kFor').textContent=kk?((kk.n||'Player')+"\u2019s kit"):('Age '+a+' kit');
     $('#kSize').textContent=size;
     $('#kNet').textContent='$'+(KIT_PRICE-CREDIT)+' after return';
-    $('#kChips').innerHTML=['Helmet','Gloves','Shin guards','Elbow pads','Pants','Skates '+skate].map(function(x){return '<span>'+x+'</span>'}).join('');
+    $('#kChips').innerHTML=['Helmet','Neck guard','Gloves','Shin guards','Elbow pads','Pants','Skates '+skate].map(function(x){return '<span>'+x+'</span>'}).join('');
     var z=zip.value, av=$('#kAvail');
     if(z.length<5){av.className='avail ok';av.textContent='Enter your ZIP to check pickup.'}
     else if(z.slice(0,2)==='63'){av.className='avail ok';av.textContent='Pickup available in the St. Louis area.'}
@@ -1877,16 +1919,16 @@ applyImgs();
     $('#kidEd').innerHTML=(k&&edOpen)?'<div class="ked"><input type="text" value="'+esc(k.n)+'" maxlength="16" aria-label="Player name"><div class="stp"><button data-s="-1" aria-label="Younger">\u2212</button><span>Age '+k.a+'</span><button data-s="1" aria-label="Older">+</button></div><button class="x" data-rm aria-label="Remove player">\u00D7</button></div>':'';
   }
   var ITEMS=[
-    {t:'Youth skates',s:'size 1',p:42,c:'Skates',g:'Grade A',a:[8,9],img:'skates',fx:'62% 88% 1.9'},
-    {t:'Starter kit',s:'age 7 to 10',p:199,c:'Kits',g:'$99 after return',a:[7,10],img:'bag',fx:'50% 60% 1.1'},
-    {t:'New helmet',s:'youth M',p:89,c:'Helmets',g:'New only',a:[8,10],img:'bench',fx:'20% 55% 1.5',nw:1},
-    {t:'Junior stick',s:'40 flex',p:59,c:'Sticks',g:'Grade A',a:[8,11],img:'ice',fx:'66% 80% 2.1'},
+    {t:'Youth skates',s:'size 1',p:30,c:'Skates',g:'Grade A',a:[8,9],img:'skates',fx:'62% 88% 1.9'},
+    {t:'Starter kit',s:'age 7 to 10',p:199,c:'Kits',g:'$149 after return',a:[7,10],img:'bag',fx:'50% 60% 1.1'},
+    {t:'New helmet',s:'youth M',p:60,c:'Helmets',g:'New only',a:[8,10],img:'bench',fx:'20% 55% 1.5',nw:1},
+    {t:'Junior stick',s:'40 flex',p:12,c:'Sticks',g:'Grade A',a:[8,11],img:'ice',fx:'66% 80% 2.1'},
     {t:'Youth gloves',s:'10 in',p:24,c:'Protective',g:'Grade A',a:[7,9],img:'bench',fx:'66% 38% 2.2'},
-    {t:'Youth skates',s:'size 13',p:38,c:'Skates',g:'Grade B',a:[6,7],img:'skates',fx:'22% 92% 1.7'},
-    {t:'Wheel gear bag',s:'33 in',p:34,c:'Bags',g:'Grade A',a:[3,14],img:'bag',fx:'38% 85% 1.5'},
-    {t:'Shin guards',s:'11 in',p:28,c:'Protective',g:'Grade A',a:[7,9],img:'skates',fx:'44% 52% 2.1'},
-    {t:'Little skater kit',s:'age 3 to 5',p:179,c:'Kits',g:'$89 after return',a:[3,5],img:'handoff',fx:'30% 60% 1.4'},
-    {t:'New helmet',s:'youth S',p:79,c:'Helmets',g:'New only',a:[3,7],img:'bench',fx:'20% 55% 1.5',nw:1}
+    {t:'Youth skates',s:'size 13',p:20,c:'Skates',g:'Grade B',a:[6,7],img:'skates',fx:'22% 92% 1.7'},
+    {t:'Wheel gear bag',s:'33 in',p:20,c:'Bags',g:'Grade A',a:[3,14],img:'bag',fx:'38% 85% 1.5'},
+    {t:'Shin guards',s:'11 in',p:14,c:'Protective',g:'Grade A',a:[7,9],img:'skates',fx:'44% 52% 2.1'},
+    {t:'Little skater kit',s:'age 3 to 5',p:199,c:'Kits',g:'$149 after return',a:[3,5],img:'handoff',fx:'30% 60% 1.4'},
+    {t:'New helmet',s:'youth S',p:60,c:'Helmets',g:'New only',a:[3,7],img:'bench',fx:'20% 55% 1.5',nw:1}
   ];
   var CATS=['All gear','Skates','Helmets','Sticks','Protective','Bags','Kits','Saved'], cat='All gear', saved={};
   try{saved=JSON.parse(localStorage.getItem('dp-saved')||'{}')}catch(e){}
@@ -1932,10 +1974,11 @@ applyImgs();
     if(e.target.id==='lkq'){renderShop();return}
     if(e.target.closest('#kidEd')&&e.target.type==='text'&&fam[selKid]){fam[selKid].n=e.target.value;saveFam();renderKids(true);renderShop();renderFam()}
   });
+  function later(f){clearTimeout(f._lt);f._lt=setTimeout(f,90)}
   function clearKid(){selKid=-1;renderKids();renderShop()}
   age.addEventListener('input',clearKid);
   stallsEl.addEventListener('click',function(e){var b=e.target.closest('.stall');if(!b)return;var a=+b.dataset.age,ix=-1;fam.forEach(function(p,i){if(ix<0&&p.a===a)ix=i});
-    if(ix>=0){selKid=ix;renderKids();renderShop();renderFam()}else clearKid()});
+    if(ix>=0){selKid=ix;renderKids();later(renderShop);later(renderFam)}else{selKid=-1;renderKids();later(renderShop)}});
   $('#stPrev').addEventListener('click',clearKid);$('#stNext').addEventListener('click',clearKid);
   renderKids();applyKid();renderShop();renderFam();
 
@@ -1945,15 +1988,18 @@ applyImgs();
   var D_A='Great condition', D_N='Brand new', D_B='Minor wear';
   function trio(a,n,b,ia,in_,ib){return [{g:'Grade A',c:'a',p:a,d:D_A,im:ia},{g:'New',c:'n',p:n,d:D_N,im:in_},{g:'Grade B',c:'b',p:b,d:D_B,im:ib}]}
   var PIECES=[
-    {k:'skates',n:'Skates',t:'skates',own:'the skates',save:12,cr:22,im:'pSk',sz:S_SK,dot:[36,78],gb:[4,74,37,26],o:trio(42,89,28,'skA','skN','skB')},
-    {k:'helmet',n:'Helmet',t:'a helmet',own:'the helmet',save:26,cr:22,im:'pHe',sz:['Youth S','Youth M','Youth L','Junior'],dot:[61,7],gb:[33,1,31,27],newOnly:1,
-     o:[{g:'New',c:'n',p:89,d:'Full cage included',im:'oHeA'},{g:'New',c:'n',p:109,d:'Lighter shell, easy fit dial',im:'pHe',up:'Upgrade protection'}]},
-    {k:'gloves',n:'Gloves',t:'gloves',own:'the gloves',save:7,cr:9,im:'pGl',sz:S_IN,dot:[23,35],gb:[3,30,24,37],o:trio(24,49,16,'oGlA','oGlB','oGlC')},
-    {k:'pants',n:'Pants',t:'pants',own:'the pants',save:7,cr:10,im:'pPa',sz:S_Y,dot:[59,59],gb:[27,54,36,30],o:trio(22,48,15,'oPaA','oPaB','oPaC')},
-    {k:'shoulder',n:'Shoulder pads',t:'shoulder pads',own:'the shoulder pads',save:8,cr:11,im:'pSh',sz:S_Y,dot:[73,30],gb:[21,27,56,27],o:trio(28,64,22,'oShA','oShB','oShC')},
-    {k:'shins',n:'Shin guards',t:'shin guards',own:'the shin guards',save:5,cr:8,im:'pSn',sz:S_IN,dot:[85,65],gb:[60,61,27,37],o:trio(18,36,12,'oSnA','oSnB','oSnC')},
-    {k:'stick',n:'Stick',t:'a stick',own:'the stick',save:18,cr:18,im:'pSt',sz:['20 flex','30 flex','40 flex','50 flex'],dot:[93,40],gb:[85,22,15,78],o:trio(59,99,39,'oStA','oStB','oStC')}
+    {k:'skates',n:'Skates',t:'skates',own:'the skates',save:4,cr:12,im:'pSk',sz:S_SK,dot:[36,78],gb:[4,74,37,26],o:trio(30,60,20,'skA','skN','skB')},
+    {k:'helmet',n:'Helmet',t:'a helmet',own:'the helmet',save:5,cr:0,im:'pHe',sz:['Youth S','Youth M','Youth L','Junior'],dot:[61,7],gb:[33,1,31,27],newOnly:1,
+     o:[{g:'New',c:'n',p:85,d:'Full cage and a new neck guard included',im:'oHeA'},{g:'New',c:'n',p:105,d:'Lighter shell, easy fit dial, neck guard included',im:'pHe',up:'Upgrade protection'}]},
+    {k:'gloves',n:'Gloves',t:'gloves',own:'the gloves',save:3,cr:10,im:'pGl',sz:S_IN,dot:[23,35],gb:[3,30,24,37],o:trio(24,45,15,'oGlA','oGlB','oGlC')},
+    {k:'pants',n:'Pants',t:'pants',own:'the pants',save:3,cr:10,im:'pPa',sz:S_Y,dot:[59,59],gb:[27,54,36,30],o:trio(24,48,15,'oPaA','oPaB','oPaC')},
+    {k:'shoulder',n:'Shoulder pads',t:'shoulder and elbow pads',own:'the shoulder and elbow pads',save:3,cr:13,im:'pSh',sz:S_Y,dot:[73,30],gb:[21,27,56,27],o:trio(32,70,19,'oShA','oShB','oShC')},
+    {k:'shins',n:'Shin guards',t:'shin guards',own:'the shin guards',save:2,cr:5,im:'pSn',sz:S_IN,dot:[85,65],gb:[60,61,27,37],o:trio(14,30,9,'oSnA','oSnB','oSnC')},
+    {k:'stick',n:'Stick',t:'a stick',own:'the stick',save:2,cr:0,im:'pSt',sz:['20 flex','30 flex','40 flex','50 flex'],dot:[93,40],gb:[85,22,15,78],o:trio(12,30,10,'oStA','oStB','oStC')}
   ];
+  (function(){var BSV={skates:2,gloves:2,pants:2,shoulder:2,shins:1,stick:0},BCR={skates:7,gloves:6,pants:6,shoulder:8,shins:3,stick:0};
+    PIECES.forEach(function(p){p.o.forEach(function(o){if(o.c==='b'){o.sv=BSV[p.k];o.cr=BCR[p.k]}if(p.k==='shoulder')o.d+=', elbow pads included'})})})();
+  function kNet(p,o){return o.p-(o.sv!=null?o.sv:p.save)}
   var KB={}; try{KB=JSON.parse(localStorage.getItem('dp-kit3')||'{}')||{}}catch(e){}
   function kbSave(){try{localStorage.setItem('dp-kit3',JSON.stringify(KB))}catch(e){}}
   var kbStep='build', kbMode='used', kbOpen=-1, kbKey='';
@@ -1972,7 +2018,7 @@ applyImgs();
     if(x.o==='off')return {c:'off',t:'Add · $'+p.o[0].p,l:'in the locker, not in the bag yet'};
     var o=p.o[x.o]||p.o[0];
     return o.c==='n'?{c:'new',t:'New · $'+o.p,l:'new, in the bag'}:{c:'in',t:'In bag · $'+o.p,l:'used, in the bag'}}
-  function kbTotals(st){var t=0,c=0,n=0;PIECES.forEach(function(p){var x=st.s[p.k];if(kbIn(x)){t+=(p.o[x.o]||p.o[0]).p-p.save;c+=p.cr;n++}});return {t:t,c:c,n:n}}
+  function kbTotals(st){var t=0,c=0,n=0;PIECES.forEach(function(p){var x=st.s[p.k];if(kbIn(x)){var o=p.o[x.o]||p.o[0];t+=kNet(p,o);c+=(o.cr!=null?o.cr:p.cr);n++}});return {t:t,c:c,n:n}}
   function kbList(a){return a.length<2?a.join(''):a.slice(0,-1).join(', ')+' and '+a[a.length-1]}
   function kbFits(st,a){return PIECES.every(function(p){var x=st.s[p.k];return !kbIn(x)||kbSz(p,x,a)===defSize(p,a)})}
   function kbRender(){
@@ -1992,7 +2038,7 @@ applyImgs();
     $('#bagT').textContent=c.name?c.name+'’s bag':'Age '+c.a+' bag'; $('#bagS').textContent=T.n+' of '+PIECES.length+' pieces packed · $'+T.t;
     var fc=$('#kbFit'); fc.textContent=fit?(c.name?'Fits '+c.name:'Fits age '+c.a):'Check sizes'; fc.className='fitc'+(fit?'':' warn');
     $('#kbGo').innerHTML=(kbStep==='review'?'Reserve '+whoS+' kit · $'+T.t:'Review kit')+'<svg aria-hidden="true"><use href="#i-next"/></svg>';
-    $('#kbMath').textContent='Sample prices. A full starter kit is $'+KIT_PRICE+' with up to $'+CREDIT+' back when you pass it back. Final prices and return values are set after the St. Louis pilot.';
+    $('#kbMath').textContent='St. Louis launch prices. A full starter kit is $'+KIT_PRICE+': skates, helmet with cage, new neck guard, gloves, pants, shoulder and elbow pads, shin guards and a stick. Sizing up later is $'+SIZEUP+'. Up to $'+CREDIT+' back in credit when you pass the pads and skates back.';
     $('#kbBuild').hidden=kbStep!=='build'; $('#kbReview').hidden=kbStep!=='review';
     if(kbStep==='build'){
       $('#kbH').innerHTML='Build '+(c.name?esc(c.name)+'’s':'the age '+c.a)+' kit'+(c.name?' <span>Age '+c.a+'</span>':'');
@@ -2003,14 +2049,14 @@ applyImgs();
         return '<article class="kbp '+s2.c+'"><button class="ph" data-kb="'+i+'" aria-label="'+p.n+', '+s2.l+'"><img data-img="'+p.im+'" alt=""></button><b>'+p.n+'</b><span class="chip '+s2.c+'"><i></i>'+s2.t+'</span><button class="ed" data-ke="'+i+'">Edit<svg aria-hidden="true"><use href="#i-next"/></svg></button></article>'}).join('');
     }else{
       var keeps=[],kv=0,offs=[],ov=0,ups=[],uv=0,vals=[],vv=0;
-      PIECES.forEach(function(p){var x=st.s[p.k],base=p.o[0].p-p.save,nm=p.n.toLowerCase();
+      PIECES.forEach(function(p){var x=st.s[p.k],base=kNet(p,p.o[0]),nm=p.n.toLowerCase();
         if(x.o==='keep'){keeps.push(nm);kv+=base}else if(x.o==='off'){offs.push(nm);ov+=base}
-        else{var d=(p.o[x.o]||p.o[0]).p-p.o[0].p;if(d>0){ups.push(nm);uv+=d}else if(d<0){vals.push(nm);vv-=d}}});
+        else{var d=kNet(p,p.o[x.o]||p.o[0])-base;if(d>0){ups.push(nm);uv+=d}else if(d<0){vals.push(nm);vv-=d}}});
       function row(ic,t,sub,amt,cl){return '<div class="kr-row '+ic+'"><i></i><div><b>'+t+'</b><span>'+sub+'</span></div><strong class="'+(cl||'')+'">'+amt+'</strong></div>'}
       var list=PIECES.reduce(function(n,p){return n+p.o[0].p},0);
       var h='<button class="kr-back" data-goto="build"><svg aria-hidden="true"><use href="#i-back"/></svg>Back to the locker</button>'+
         '<h3 class="kb-h">Kit savings</h3><p class="kb-s">Real gear. A smarter way.</p><div class="kr-rows">'+
-        row('cart','Starter kit',PIECES.length+' items for '+who+(c.name?' (Age '+c.a+')':'')+'. $'+list+' if bought one by one.','$'+KIT_PRICE)+
+        row('cart','Starter kit',PIECES.length+' items for '+who+(c.name?' (Age '+c.a+')':'')+'. $'+list+' if bought one by one. Elbow pads and a new neck guard included.','$'+KIT_PRICE)+
         (keeps.length?row('keep','Keeping your '+kbList(keeps),'Use the equipment you already have','−$'+kv,'g'):'')+
         (offs.length?row('off','Not packed: '+kbList(offs),'Still in the locker','−$'+ov,'g'):'')+
         (vals.length?row('val','Grade B '+kbList(vals),'More wear, lower price','−$'+vv,'g'):'')+
@@ -2025,6 +2071,30 @@ applyImgs();
     }
     applyImgs($('#kb'));
     if(kbOpen>=0)kbSheet(); else $('#kbsWrap').hidden=true;
+  }
+
+  function kbHold(){
+    var c=kbCtx(),st=kbState(c.key),T=kbTotals(st),ai=Math.max(3,Math.min(12,c.a)),lines=[],rows='';
+    if(!T.n){kbToast('Add a piece to the bag first');return}
+    PIECES.forEach(function(p){var x=st.s[p.k];if(!kbIn(x))return;var o=p.o[x.o]||p.o[0],sz=kbSz(p,x,c.a),g=o.c==='n'?'New':o.g;
+      lines.push('- '+p.n+(p.k==='shoulder'?' + elbow pads':p.k==='helmet'?' + neck guard':'')+': '+sz+', '+g+(x.br?', '+x.br:'')+', $'+o.p);
+      rows+='<li><b>'+esc(p.n)+'</b><span>'+esc(sz)+' · '+g+'</span><em>$'+o.p+'</em></li>'});
+    var who=c.name?c.name:'Age '+c.a+' player', get=st.get==='club'?'Club event':'Rink pickup';
+    var txt='Drop Pass kit request\n'+who+(c.name?' (age '+c.a+')':'')+', about '+fmtHt(HT[ai])+', '+sizeFor(HT[ai])[0]+'\n'+lines.join('\n')+'\nKit total: $'+T.t+(T.c?' (up to $'+T.c+' back in credit when outgrown)':'')+'\nPickup: '+get+'\nNo payment yet. droppasshockey.com';
+    var w=$('#holdW');if(!w){w=document.createElement('div');w.id='holdW';w.className='hold-w';document.body.appendChild(w)}
+    function close(){w.hidden=true}
+    function body(h){w.innerHTML='<div class="hold" role="dialog" aria-modal="true" aria-labelledby="holdH"><button class="hq-x" data-hx aria-label="Close">×</button>'+h+'</div>';w.hidden=false}
+    function done(copied){body('<div class="hq-ok"><i></i><h3 id="holdH">'+(copied?'Request copied':'Request ready')+'</h3><p>'+(copied?'Paste it into a text to the Drop Pass contact who sent you this link.':'We confirm sizes and pickup by text. You pay at pickup.')+'</p></div><button class="btn pri" data-hx>Done</button>')}
+    function manual(){body('<h3 id="holdH">Copy your request</h3><p class="hq-s">Press and hold to copy, then text it to your Drop Pass contact.</p><textarea class="hq-tx" readonly>'+esc(txt)+'</textarea><button class="btn pri" data-hx>Done</button>');var ta=w.querySelector('textarea');if(ta){ta.focus();ta.select()}}
+    function copy(){if(navigator.clipboard&&navigator.clipboard.writeText)navigator.clipboard.writeText(txt).then(function(){done(true)},manual);else manual()}
+    body('<h3 id="holdH">Hold '+(c.name?esc(c.name)+'’s':'this')+' kit</h3><p class="hq-s">No payment now. Send the request, we confirm sizes and pickup by text, and you pay at pickup.</p><ul class="hq-l">'+rows+'</ul><div class="hq-t"><span>Kit total</span><b>$'+T.t+'</b></div>'+(T.c?'<p class="hq-c">Up to $'+T.c+' back in credit when '+(c.name?esc(c.name):'your player')+' outgrows it.</p>':'')+'<button class="btn pri" data-hsend>Send my kit request</button><button class="hq-link" data-happ>See the app preview</button>');
+    w.onclick=function(e){
+      if(e.target===w||e.target.closest('[data-hx]')){close();return}
+      if(e.target.closest('[data-happ]')){close();$('#kitGo').click();return}
+      if(e.target.closest('[data-hsend]')){
+        if(navigator.share){navigator.share({title:'Drop Pass kit request',text:txt}).then(function(){done(false)},function(er){if(!er||er.name!=='AbortError')copy()})}
+        else copy()}};
+    var b=w.querySelector('[data-hsend]');if(b){try{b.focus({preventScroll:true})}catch(e){}}var hq=w.querySelector('.hold');if(hq)hq.scrollTop=0;
   }
   var BRANDS=['Bauer','CCM'], kbD=null, kbBusy=false;
   function kbSzLbl(P,v){return v.replace(/^Youth /,P.k==='skates'?'Y':'').replace(/^Junior ?/,P.k==='skates'?'Jr ':'Jr')}
@@ -2070,7 +2140,7 @@ applyImgs();
     if(e.target.closest('#kbBag')){kbStep='review';kbRender();var sb=$('.kb-hero');if(sb&&sb.scrollIntoView)sb.scrollIntoView({block:'start',behavior:RM?'auto':'smooth'});return}
     if(e.target.closest('#kbPack')){var k=0;PIECES.forEach(function(p,j){var y=st.s[p.k];if(y.o==='off'){y.o=0;(function(j,k){setTimeout(function(){kbFly(j,true)},k*130)})(j,k);k++}});kbSave();kbRender();setTimeout(function(){kbToast('<b>'+(k===PIECES.length?'Full kit':k+(k===1?' piece':' pieces'))+'</b> packed in '+(c.name?esc(c.name)+'\u2019s':'the')+' bag',1)},k*130+500);return}
     if(e.target.closest('#kbGo')){
-      if(kbStep==='review'){kbSave();$('#kitGo').click();return}
+      if(kbStep==='review'){kbSave();kbHold();return}
       kbStep='review';kbRender();var sh=$('.kb-sheet');if(sh&&sh.scrollIntoView)sh.scrollIntoView({block:'start',behavior:RM?'auto':'smooth'})}
   });
   $('#kbsWrap').addEventListener('click',function(e){
@@ -2129,7 +2199,16 @@ applyImgs();
     dots.innerHTML=PIECES.map(function(p,i){var x=st.s[p.k],s2=kbStat(p,x),d=carDot(p,ai);
       return '<button class="hd '+s2.c+'" data-ke="'+i+'" style="left:'+d[0]+'%;top:'+d[1]+'%" aria-label="'+p.n+', '+s2.l+'. Tap to change."><i></i></button>'}).join('');
     if(ai!==carAge){var first=!carAge;carAge=ai;if(!carLock)carCenter(!first)}
+    flowPos=null;if(!flowRaf)flowRaf=requestAnimationFrame(carFlow)
   }
+
+  var flowRaf=0, flowPos=null;
+  function flowMeasure(){flowPos=$$('.hstall',car).map(function(sl){return [sl,sl.offsetLeft+sl.offsetWidth/2]})}
+  function carFlow(){flowRaf=0;if(!car.clientWidth)return;if(!flowPos)flowMeasure();
+    var mid=car.scrollLeft+car.clientWidth/2,step=flowPos.length>1?Math.abs(flowPos[1][1]-flowPos[0][1]):300;
+    flowPos.forEach(function(q){var k=Math.max(0,1-Math.abs(q[1]-mid)/step);q[0].style.setProperty('--k',k.toFixed(3));q[0].style.zIndex=k>.5?3:k>0?2:1})}
+  car.addEventListener('scroll',function(){if(!flowRaf)flowRaf=requestAnimationFrame(carFlow)},{passive:true});
+  addEventListener('resize',function(){flowPos=null;if(!flowRaf)flowRaf=requestAnimationFrame(carFlow)});
   var carT=0;
   car.addEventListener('scroll',function(){clearTimeout(carT);carT=setTimeout(function(){
     if(!car.clientWidth)return;
@@ -2373,7 +2452,7 @@ applyImgs();
 
   /* ================= compare ================= */
   var sizes=$('#sizes');
-  function cost(){var n=+sizes.value, a=KIT_PRICE*n, b=(KIT_PRICE-CREDIT)*n, max=KIT_PRICE*5;
+  function cost(){var n=+sizes.value, a=KIT_PRICE+SIZEUP*(n-1), b=a-CREDIT*n, max=KIT_PRICE+SIZEUP*4;
     $('#szV').textContent=n; $('#tA').textContent='$'+a; $('#tB').textContent='$'+b;
     $('#bA').style.width=Math.max(18,a/max*100)+'%'; $('#bA').textContent='$'+a;
     $('#bB').style.width=Math.max(18,b/max*100)+'%'; $('#bB').textContent='$'+b;
@@ -2381,7 +2460,7 @@ applyImgs();
   sizes.addEventListener('input',cost); cost();
 
   /* ================= app ================= */
-  var gear=[['Helmet','Y-M','good',22],['Gloves','10 in','good',10],['Shin guards','11 in','good',12],['Elbow pads','Y-M','good',9],['Pants','Y-M','good',14],['Shoulder pads','Y-M','good',18],['Skates','Y11','tight',24]];
+  var gear=[['Helmet','Y-M','good',0],['Gloves','10 in','good',10],['Shin guards','11 in','good',5],['Elbow pads','Y-M','good',5],['Pants','Y-M','good',10],['Shoulder pads','Y-M','good',8],['Skates','Y11','tight',12]];
   $('#gearList').innerHTML=gear.map(function(g){return '<div class="g"><i class="dot" style="background:'+(g[2]==='tight'?'#E39B14':'#18A56C')+'"></i><b>'+g[0]+'</b><em>'+g[1]+'</em><span class="rv">$'+g[3]+'</span></div>'}).join('');
   var picks={};
   $('#pickList').innerHTML=gear.map(function(g,i){return '<button class="chk" data-i="'+i+'" aria-pressed="false"><span class="bx"><svg style="width:14px;height:14px"><use href="#i-check"/></svg></span>'+g[0]+'<span class="rv">$'+g[3]+'</span></button>'}).join('');
@@ -2423,7 +2502,7 @@ applyImgs();
 
   /* ================= ask ================= */
   var FAQ=[
-    ['How much does a kit cost?','Sample price is $199 with up to $100 back when you pass it back. Final prices are set after the St. Louis pilot.','kits','price cost kit how much $199 afford cheap'],
+    ['How much does a kit cost?','A full starter kit is $199: skates, helmet with cage, new neck guard, gloves, pants, shoulder and elbow pads, shin guards and a stick. Sizing up later is $109, and you get up to $50 back in credit when you pass the old set back.','kits','price cost kit how much $199 afford cheap'],
     ['What happens when my player outgrows it?','Pass it back in the app, schedule a pickup, and the credit posts after inspection.','pass','outgrow grow return pass back credit trade'],
     ['Is used gear safe?','Every returned piece is inspected and cleaned. Gear that fails inspection leaves circulation.','loop','safe safety used inspect clean helmet'],
     ['How do I get my kit?','Pickup happens at a pass point or club event. You can pay in the app or at pickup.','app','pickup pick up where location pay'],
