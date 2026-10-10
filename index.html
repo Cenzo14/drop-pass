@@ -1532,6 +1532,13 @@ body:has(#s-kits.on) #dock button.home .ic{box-shadow:0 0 0 4px #0a1830,0 0 0 6p
 }
 @media (max-width:410px){#v-home .cta.ctop #heroPass{padding:6px 8px 6px 6px}#v-home .cta.ctop #heroPass .blogo{margin-right:6px}}
 @media (max-width:374px){#v-home .cta .btn .blogo{width:24px!important;height:24px!important;margin-right:5px}#v-home .cta.ctop .btn{font-size:13px!important}#v-home .cta.ctop #heroPass{padding:0 6px 0 4px!important}#v-home .cta.ctop #heroPass .blogo{margin-right:5px!important}#v-home .cta.ctop .hpin{width:38px;height:38px}}
+
+/* v26: puck strip above the photo + logo puck */
+@media (max-width:820px){
+  #v-home .ha-main{top:calc(env(safe-area-inset-top,0px) + 118px)!important;-webkit-mask-image:linear-gradient(180deg,transparent 0,rgba(0,0,0,.6) 4%,#000 11%,#000 60%,rgba(0,0,0,.42) 78%,transparent 95%)!important;mask-image:linear-gradient(180deg,transparent 0,rgba(0,0,0,.6) 4%,#000 11%,#000 60%,rgba(0,0,0,.42) 78%,transparent 95%)!important}
+  #v-home .ha-main img{object-position:50% 18%!important}
+  #puckl.in{opacity:.8}
+}
 </style>
 </head>
 <body>
@@ -1936,12 +1943,14 @@ applyImgs();
     trailP=el('path',{d:'M0 0',fill:'none',stroke:bl,'stroke-width':5,'stroke-linecap':'round','stroke-linejoin':'round',opacity:.85},pl);
     hitG=el('g',{},pl);
     puckG=el('g',{},pl);
-    var ps=W<700?.82:1;
+    var ps=W<700?1.05:1.25;
     el('ellipse',{cx:3*ps,cy:13*ps,rx:22*ps,ry:8*ps,fill:'#0A1830',opacity:.16},puckG);
     el('ellipse',{cx:0,cy:7*ps,rx:21*ps,ry:8.500*ps,fill:'#050B18'},puckG);
     el('rect',{x:-21*ps,y:0,width:42*ps,height:7*ps,fill:'#050B18'},puckG);
     el('ellipse',{cx:0,cy:0,rx:21*ps,ry:8.500*ps,fill:'#13264A',stroke:bl,'stroke-width':1.600*ps},puckG);
-    el('ellipse',{cx:-5*ps,cy:-2*ps,rx:10*ps,ry:2.800*ps,fill:'#fff',opacity:.28},puckG);
+    var pkc=el('clipPath',{id:'pkc'},puckG); el('ellipse',{cx:0,cy:0,rx:20.200*ps,ry:7.900*ps},pkc);
+    var pim=el('image',{x:-20.200*ps,y:-7.900*ps,width:40.400*ps,height:15.800*ps,preserveAspectRatio:'none','clip-path':'url(#pkc)'},puckG);
+    pim.setAttribute('href',(window.IMG&&IMG.logoSm)||'');
     window._rk={P:P,A:A,B:B};
     if(sA&&sB)startPuck();else startBounce();
   }
@@ -1990,7 +1999,7 @@ applyImgs();
   }
   function startBounce(){
     var my=++runId, bl=css('--blue')||'#2A78FF', rd=css('--red')||'#E5484D';
-    var tb=$('.top'),dk=$('#dock'),tr=tb&&tb.getBoundingClientRect(),dr=dk&&dk.getBoundingClientRect();
+    var tb=$('.top'),dk=$('#dock'),tr=tb&&tb.getBoundingClientRect(),dr=dk&&dk.getBoundingClientRect(),ct=$('#v-home .cta.ctop'),cr=ct&&ct.getBoundingClientRect();if(W<=820&&cr&&cr.height)tr={bottom:cr.bottom+16,height:1};
     var x0=W*.1+20, x1=W*.9-20, y0=(tr&&tr.height?tr.bottom:64)+8, y1=(dr&&dr.height?dr.top:H-96)-18;
     if(x1-x0<60){x0=24;x1=W-24} if(y1-y0<120){y0=30;y1=H-30}
     var sp=Math.max(170,Math.min(320,Math.sqrt(W*H)*.42)), an=.93, x=x0+(x1-x0)*.3, y=y0+(y1-y0)*.62, vx=Math.cos(an)*sp, vy=-Math.sin(an)*sp, pts=[], hits=[], last=null;
